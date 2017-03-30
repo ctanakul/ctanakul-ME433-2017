@@ -31,7 +31,7 @@
 
 // DEVCFG3
 #pragma config USERID = 0 // some 16bit userid, doesn't matter what
-#pragma config PMDL1WAY = ON // allow multiple reconfigurations
+#pragma config PMDL1WAY = OFF // allow multiple reconfigurations
 #pragma config IOL1WAY = OFF // allow multiple reconfigurations
 #pragma config FUSBIDIO = ON // USB pins controlled by USB module
 #pragma config FVBUSONIO = ON // USB BUSON controlled by USB module
@@ -56,19 +56,22 @@ int main() {
     // do your TRIS and LAT commands here
     TRISBbits.TRISB4 = 1;
     TRISAbits.TRISA4 = 0;
-    LATAbits.LATA4 = 1;
+    LATAbits.LATA4 = 0;
     
     
     __builtin_enable_interrupts();
 
     while(1) {
 	    // use _CP0_SET_COUNT(0) and _CP0_GET_COUNT() to test the PIC timing
-        //_CP0_SET_COUNT(0);
+        _CP0_SET_COUNT(0);
 		  // remember the core timer runs at half the sysclk
-        //while (_CP0_GET_COUNT() < 12000)
-        //{
-            
-            
-        //}
+        while (_CP0_GET_COUNT() < 12000)
+        {
+            while(!PORTBbits.RB4){
+            LATAbits.LATA4 = 0;   
+            }
+        }
+        //LATAbits.LATA4 = 0;
+        LATAINV = 0b10000;
     }
 }
