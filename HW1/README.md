@@ -1,3 +1,6 @@
+### The circuit diagram
+![circuit diagram](https://github.com/ctanakul/ctanakul-ME433-2017/blob/master/HW1/0_circuit_diagram.jpg)The circuit diagram
+
 ### Pictures of the plot of output voltage from voltage regulator before and after adding capacitor
 
 ![Before adding any capacitors](https://github.com/ctanakul/ctanakul-ME433-2017/blob/master/HW1/1_b4_add_c.png)Before adding any capacitors, the signal is very noisy.    
