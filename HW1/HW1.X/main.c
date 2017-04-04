@@ -68,6 +68,7 @@ int main() {
         while (_CP0_GET_COUNT() < 12000)
         {
             while(!PORTBbits.RB4){
+            //while(1){
             LATAbits.LATA4 = 0;   
             }
         }
