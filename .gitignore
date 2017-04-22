@@ -5,6 +5,7 @@
 /HW1/HW1.X/dist/default/
 /HW1/HW1.X/nbproject/**
 *.mp4
+**/nbproject
 /HW2/wired_board
 /HW4/HW4.X/nbproject/private/
 /HW4/HW4.X/build/default/
