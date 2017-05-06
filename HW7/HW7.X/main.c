@@ -78,8 +78,7 @@ int main() {
         z_ang = (data[7] << 8) | data[6];
         x_l_acc = (data[9] << 8) | data[8];
         y_l_acc = (data[11] << 8) | data[10];
-        z_l_acc = (data[13] << 8) | data[12];
-        
+        z_l_acc = (data[13] << 8) | data[12];        
         draw_bar_accel(x_l_acc*0.00061, y_l_acc*0.00061, 3, RED, BG_COLOR);
         
 //        sprintf(msg, "%.2f  ", x_l_acc*0.00061);
