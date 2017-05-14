@@ -1,0 +1,969 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGFPE (0x8) at pc=0x00007fc559640659, pid=24815, tid=140485589194560
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_91-b14) (build 1.8.0_91-b14)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.91-b14 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# C  [libpthread.so.0+0x9659]  pthread_join+0xa9
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread is native thread
+
+siginfo: si_signo: 8 (SIGFPE), si_code: 0 (SI_USER), sent from pid: 27592 (uid: 0)
+
+Registers:
+RAX=0x00000000000000ca, RBX=0x00007fc557b6b700, RCX=0x00007fc55964065b, RDX=0x00000000000060f0
+RSP=0x00007fffbc635510, RBP=0x00007fc559a3d740, RSI=0x0000000000000000, RDI=0x00007fc557b6b9d0
+R8 =0x0000000000000000, R9 =0x00007fc557b6b700, R10=0x0000000000000000, R11=0x0000000000000246
+R12=0x00007fc557b6bd28, R13=0x00007fffbc6355b0, R14=0x00007fffbc635510, R15=0x0000000000000006
+RIP=0x00007fc559640659, EFLAGS=0x0000000000000246, CSGSFS=0x0000000000000033, ERR=0x0000000000000000
+  TRAPNO=0x0000000000000000
+
+Top of Stack: (sp=0x00007fffbc635510)
+0x00007fffbc635510:   00007fc559640590 00007fc557b6bd28
+0x00007fffbc635520:   0000000000000000 0000000000000000
+0x00007fffbc635530:   00007fc557b6b9d0 0000000000200000
+0x00007fffbc635540:   00007fffbc6355e0 00007fffbc635570
+0x00007fffbc635550:   00007fffbc635610 00007fc5594283c0
+0x00007fffbc635560:   0000000000000006 00007fc55942c245
+0x00007fffbc635570:   0000000000000000 0000000000000000
+0x00007fffbc635580:   0000000000001000 0000000000000000
+0x00007fffbc635590:   0000000000200000 0000000000000000
+0x00007fffbc6355a0:   0000000000000000 00007fc558ea9507
+0x00007fffbc6355b0:   0000005b00000000 00007fc557b6b700
+0x00007fffbc6355c0:   00007fffbc6397b0 0000000000000000
+0x00007fffbc6355d0:   0000000000200000 00007fffbc635610
+0x00007fffbc6355e0:   00007fffbc6356a0 00007fc55942797a
+0x00007fffbc6355f0:   0000000000000001 0000000000000000
+0x00007fffbc635600:   0000000000000006 00007fc559427a37
+0x00007fffbc635610:   0000000000000006 000000000242e1f8
+0x00007fffbc635620:   0000000000000001 00007fffbc63b750
+0x00007fffbc635630:   00007fc558540d70 00007fc55853d700
+0x00007fffbc635640:   00007fc55853d6c0 0000000000000006
+0x00007fffbc635650:   00007fffbc6356a0 00007fc55942c12a
+0x00007fffbc635660:   00007fffbc6356a0 0000000000200000
+0x00007fffbc635670:   00007fffbc6397b0 00007fffbc63b7d6
+0x00007fffbc635680:   000000000000001b 00007fffbc639901
+0x00007fffbc635690:   0000000000000000 000000000000001b
+0x00007fffbc6356a0:   00007fffbc639810 00007fc55942a9e8
+0x00007fffbc6356b0:   00007fff00000000 0000000000001000
+0x00007fffbc6356c0:   0000000000000000 0000000000000000
+0x00007fffbc6356d0:   00007fffbc638780 00007fffbc637780
+0x00007fffbc6356e0:   00007fffbc6397b0 00007fffbc63575c
+0x00007fffbc6356f0:   00007fffbc635750 0000000000000000
+0x00007fffbc635700:   0000000100000000 0000000000000000 
+
+Instructions: (pc=0x00007fc559640659)
+0x00007fc559640639:   00 8b 8b d0 02 00 00 85 c9 89 ca 74 1a 48 8d bb
+0x00007fc559640649:   d0 02 00 00 31 f6 4d 31 d2 48 c7 c0 ca 00 00 00
+0x00007fc559640659:   0f 05 83 3f 00 75 f2 44 89 c7 e8 08 58 00 00 31
+0x00007fc559640669:   f6 4c 89 f7 e8 ee 53 00 00 4d 85 ed c7 83 d0 02 
+
+Register to memory mapping:
+
+RAX=0x00000000000000ca is an unknown value
+RBX=0x00007fc557b6b700 is pointing into the stack for thread: 0x00007fc5502af800
+RCX=0x00007fc55964065b: pthread_join+0xab in /lib/x86_64-linux-gnu/libpthread.so.0 at 0x00007fc559637000
+RDX=0x00000000000060f0 is an unknown value
+RSP=0x00007fffbc635510 is an unknown value
+RBP=0x00007fc559a3d740 is an unknown value
+RSI=0x0000000000000000 is an unknown value
+RDI=0x00007fc557b6b9d0 is pointing into the stack for thread: 0x00007fc5502af800
+R8 =0x0000000000000000 is an unknown value
+R9 =0x00007fc557b6b700 is pointing into the stack for thread: 0x00007fc5502af800
+R10=0x0000000000000000 is an unknown value
+R11=0x0000000000000246 is an unknown value
+R12=0x00007fc557b6bd28 is pointing into the stack for thread: 0x00007fc5502af800
+R13=0x00007fffbc6355b0 is an unknown value
+R14=0x00007fffbc635510 is an unknown value
+R15=0x0000000000000006 is an unknown value
+
+
+Stack: [0x00007fffbc43c000,0x00007fffbc63c000],  sp=0x00007fffbc635510,  free space=2021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libpthread.so.0+0x9659]  pthread_join+0xa9
+
+
+---------------  P R O C E S S  ---------------
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 476672K, used 110884K [0x000000076cd80000, 0x0000000790580000, 0x00000007c0000000)
+  eden space 407552K, 20% used [0x000000076cd80000,0x0000000771fe4c78,0x0000000785b80000)
+  from space 69120K, 38% used [0x0000000785b80000,0x0000000787564578,0x0000000789f00000)
+  to   space 66048K, 0% used [0x000000078c500000,0x000000078c500000,0x0000000790580000)
+ ParOldGen       total 502784K, used 117399K [0x00000006c6800000, 0x00000006e5300000, 0x000000076cd80000)
+  object space 502784K, 23% used [0x00000006c6800000,0x00000006cdaa5da0,0x00000006e5300000)
+ Metaspace       used 92963K, capacity 103088K, committed 103244K, reserved 1138688K
+  class space    used 10986K, capacity 14112K, committed 14156K, reserved 1048576K
+
+Card table byte_map: [0x00007fc555d45000,0x00007fc556512000] byte_map_base: 0x00007fc552711000
+
+Marking Bits: (ParMarkBitMap*) 0x00007fc558e28d60
+ Begin Bits: [0x00007fc528340000, 0x00007fc52c1a0000)
+ End Bits:   [0x00007fc52c1a0000, 0x00007fc530000000)
+
+Polling page: 0x00007fc559a74000
+
+CodeCache: size=245760Kb used=35385Kb max_used=35703Kb free=210374Kb
+ bounds [0x00007fc541000000, 0x00007fc543360000, 0x00007fc550000000]
+ total_blobs=13636 nmethods=12757 adapters=789
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 123.081 Thread 0x00007fc5500ba800 nmethod 16862 0x00007fc542758310 code [0x00007fc542758720, 0x00007fc54275a738]
+Event: 123.082 Thread 0x00007fc5500ba800 16877       4       org.openide.filesystems.AbstractFolder::hasExtOverride (69 bytes)
+Event: 123.088 Thread 0x00007fc5500ba800 nmethod 16877 0x00007fc541d4eb50 code [0x00007fc541d4ecc0, 0x00007fc541d4ef58]
+Event: 123.089 Thread 0x00007fc5500ba800 16867   !   4       com.sun.org.apache.xml.internal.dtm.ref.dom2dtm.DOM2DTM::addNode (417 bytes)
+Event: 123.100 Thread 0x00007fc5500bd000 nmethod 16876 0x00007fc5430ac4d0 code [0x00007fc5430ac880, 0x00007fc5430aef48]
+Event: 123.139 Thread 0x00007fc5500ba800 nmethod 16867 0x00007fc54331fbd0 code [0x00007fc54331fea0, 0x00007fc543321f70]
+Event: 124.612 Thread 0x00007fc5500bd000 16878       4       java.util.TreeMap::firstKey (8 bytes)
+Event: 124.613 Thread 0x00007fc5500bd000 nmethod 16878 0x00007fc542758010 code [0x00007fc542758160, 0x00007fc542758218]
+Event: 128.709 Thread 0x00007fc5500bf000 16879       3       java.util.concurrent.locks.ReentrantLock$NonfairSync::tryAcquire (6 bytes)
+Event: 128.709 Thread 0x00007fc5500bf000 nmethod 16879 0x00007fc54233c7d0 code [0x00007fc54233c940, 0x00007fc54233cb48]
+
+GC Heap History (10 events):
+Event: 17.107 GC heap before
+{Heap before GC invocations=19 (full 4):
+ PSYoungGen      total 368128K, used 68032K [0x000000076cd80000, 0x000000078ca80000, 0x00000007c0000000)
+  eden space 300032K, 0% used [0x000000076cd80000,0x000000076cd80000,0x000000077f280000)
+  from space 68096K, 99% used [0x000000077f280000,0x00000007834f02e0,0x0000000783500000)
+  to   space 78848K, 0% used [0x0000000787d80000,0x0000000787d80000,0x000000078ca80000)
+ ParOldGen       total 339456K, used 63839K [0x00000006c6800000, 0x00000006db380000, 0x000000076cd80000)
+  object space 339456K, 18% used [0x00000006c6800000,0x00000006ca657ca8,0x00000006db380000)
+ Metaspace       used 88233K, capacity 98303K, committed 98380K, reserved 1134592K
+  class space    used 10623K, capacity 13627K, committed 13644K, reserved 1048576K
+Event: 17.435 GC heap after
+Heap after GC invocations=19 (full 4):
+ PSYoungGen      total 368128K, used 0K [0x000000076cd80000, 0x000000078ca80000, 0x00000007c0000000)
+  eden space 300032K, 0% used [0x000000076cd80000,0x000000076cd80000,0x000000077f280000)
+  from space 68096K, 0% used [0x000000077f280000,0x000000077f280000,0x0000000783500000)
+  to   space 78848K, 0% used [0x0000000787d80000,0x0000000787d80000,0x000000078ca80000)
+ ParOldGen       total 502784K, used 117367K [0x00000006c6800000, 0x00000006e5300000, 0x000000076cd80000)
+  object space 502784K, 23% used [0x00000006c6800000,0x00000006cda9dda0,0x00000006e5300000)
+ Metaspace       used 88233K, capacity 98303K, committed 98380K, reserved 1134592K
+  class space    used 10623K, capacity 13627K, committed 13644K, reserved 1048576K
+}
+Event: 18.736 GC heap before
+{Heap before GC invocations=20 (full 4):
+ PSYoungGen      total 368128K, used 300032K [0x000000076cd80000, 0x000000078ca80000, 0x00000007c0000000)
+  eden space 300032K, 100% used [0x000000076cd80000,0x000000077f280000,0x000000077f280000)
+  from space 68096K, 0% used [0x000000077f280000,0x000000077f280000,0x0000000783500000)
+  to   space 78848K, 0% used [0x0000000787d80000,0x0000000787d80000,0x000000078ca80000)
+ ParOldGen       total 502784K, used 117367K [0x00000006c6800000, 0x00000006e5300000, 0x000000076cd80000)
+  object space 502784K, 23% used [0x00000006c6800000,0x00000006cda9dda0,0x00000006e5300000)
+ Metaspace       used 89271K, capacity 99403K, committed 99532K, reserved 1134592K
+  class space    used 10686K, capacity 13694K, committed 13772K, reserved 1048576K
+Event: 18.753 GC heap after
+Heap after GC invocations=20 (full 4):
+ PSYoungGen      total 437248K, used 11827K [0x000000076cd80000, 0x000000078c700000, 0x00000007c0000000)
+  eden space 361984K, 0% used [0x000000076cd80000,0x000000076cd80000,0x0000000782f00000)
+  from space 75264K, 15% used [0x0000000787d80000,0x000000078890ce68,0x000000078c700000)
+  to   space 77824K, 0% used [0x0000000782f00000,0x0000000782f00000,0x0000000787b00000)
+ ParOldGen       total 502784K, used 117375K [0x00000006c6800000, 0x00000006e5300000, 0x000000076cd80000)
+  object space 502784K, 23% used [0x00000006c6800000,0x00000006cda9fda0,0x00000006e5300000)
+ Metaspace       used 89271K, capacity 99403K, committed 99532K, reserved 1134592K
+  class space    used 10686K, capacity 13694K, committed 13772K, reserved 1048576K
+}
+Event: 20.297 GC heap before
+{Heap before GC invocations=21 (full 4):
+ PSYoungGen      total 437248K, used 373811K [0x000000076cd80000, 0x000000078c700000, 0x00000007c0000000)
+  eden space 361984K, 100% used [0x000000076cd80000,0x0000000782f00000,0x0000000782f00000)
+  from space 75264K, 15% used [0x0000000787d80000,0x000000078890ce68,0x000000078c700000)
+  to   space 77824K, 0% used [0x0000000782f00000,0x0000000782f00000,0x0000000787b00000)
+ ParOldGen       total 502784K, used 117375K [0x00000006c6800000, 0x00000006e5300000, 0x000000076cd80000)
+  object space 502784K, 23% used [0x00000006c6800000,0x00000006cda9fda0,0x00000006e5300000)
+ Metaspace       used 90414K, capacity 100469K, committed 100684K, reserved 1136640K
+  class space    used 10791K, capacity 13859K, committed 13900K, reserved 1048576K
+Event: 20.330 GC heap after
+Heap after GC invocations=21 (full 4):
+ PSYoungGen      total 439808K, used 28855K [0x000000076cd80000, 0x000000078eb80000, 0x00000007c0000000)
+  eden space 361984K, 0% used [0x000000076cd80000,0x000000076cd80000,0x0000000782f00000)
+  from space 77824K, 37% used [0x0000000782f00000,0x0000000784b2dfd8,0x0000000787b00000)
+  to   space 73216K, 0% used [0x000000078a400000,0x000000078a400000,0x000000078eb80000)
+ ParOldGen       total 502784K, used 117383K [0x00000006c6800000, 0x00000006e5300000, 0x000000076cd80000)
+  object space 502784K, 23% used [0x00000006c6800000,0x00000006cdaa1da0,0x00000006e5300000)
+ Metaspace       used 90414K, capacity 100469K, committed 100684K, reserved 1136640K
+  class space    used 10791K, capacity 13859K, committed 13900K, reserved 1048576K
+}
+Event: 21.564 GC heap before
+{Heap before GC invocations=22 (full 4):
+ PSYoungGen      total 439808K, used 390839K [0x000000076cd80000, 0x000000078eb80000, 0x00000007c0000000)
+  eden space 361984K, 100% used [0x000000076cd80000,0x0000000782f00000,0x0000000782f00000)
+  from space 77824K, 37% used [0x0000000782f00000,0x0000000784b2dfd8,0x0000000787b00000)
+  to   space 73216K, 0% used [0x000000078a400000,0x000000078a400000,0x000000078eb80000)
+ ParOldGen       total 502784K, used 117383K [0x00000006c6800000, 0x00000006e5300000, 0x000000076cd80000)
+  object space 502784K, 23% used [0x00000006c6800000,0x00000006cdaa1da0,0x00000006e5300000)
+ Metaspace       used 90844K, capacity 100986K, committed 101196K, reserved 1136640K
+  class space    used 10794K, capacity 13859K, committed 13900K, reserved 1048576K
+Event: 21.597 GC heap after
+Heap after GC invocations=22 (full 4):
+ PSYoungGen      total 471552K, used 30728K [0x000000076cd80000, 0x000000078e280000, 0x00000007c0000000)
+  eden space 407552K, 0% used [0x000000076cd80000,0x000000076cd80000,0x0000000785b80000)
+  from space 64000K, 48% used [0x000000078a400000,0x000000078c2023a8,0x000000078e280000)
+  to   space 69120K, 0% used [0x0000000785b80000,0x0000000785b80000,0x0000000789f00000)
+ ParOldGen       total 502784K, used 117391K [0x00000006c6800000, 0x00000006e5300000, 0x000000076cd80000)
+  object space 502784K, 23% used [0x00000006c6800000,0x00000006cdaa3da0,0x00000006e5300000)
+ Metaspace       used 90844K, capacity 100986K, committed 101196K, reserved 1136640K
+  class space    used 10794K, capacity 13859K, committed 13900K, reserved 1048576K
+}
+Event: 100.663 GC heap before
+{Heap before GC invocations=23 (full 4):
+ PSYoungGen      total 471552K, used 438280K [0x000000076cd80000, 0x000000078e280000, 0x00000007c0000000)
+  eden space 407552K, 100% used [0x000000076cd80000,0x0000000785b80000,0x0000000785b80000)
+  from space 64000K, 48% used [0x000000078a400000,0x000000078c2023a8,0x000000078e280000)
+  to   space 69120K, 0% used [0x0000000785b80000,0x0000000785b80000,0x0000000789f00000)
+ ParOldGen       total 502784K, used 117391K [0x00000006c6800000, 0x00000006e5300000, 0x000000076cd80000)
+  object space 502784K, 23% used [0x00000006c6800000,0x00000006cdaa3da0,0x00000006e5300000)
+ Metaspace       used 92070K, capacity 102164K, committed 102348K, reserved 1138688K
+  class space    used 10863K, capacity 13973K, committed 14028K, reserved 1048576K
+Event: 100.701 GC heap after
+Heap after GC invocations=23 (full 4):
+ PSYoungGen      total 476672K, used 26513K [0x000000076cd80000, 0x0000000790580000, 0x00000007c0000000)
+  eden space 407552K, 0% used [0x000000076cd80000,0x000000076cd80000,0x0000000785b80000)
+  from space 69120K, 38% used [0x0000000785b80000,0x0000000787564578,0x0000000789f00000)
+  to   space 66048K, 0% used [0x000000078c500000,0x000000078c500000,0x0000000790580000)
+ ParOldGen       total 502784K, used 117399K [0x00000006c6800000, 0x00000006e5300000, 0x000000076cd80000)
+  object space 502784K, 23% used [0x00000006c6800000,0x00000006cdaa5da0,0x00000006e5300000)
+ Metaspace       used 92070K, capacity 102164K, committed 102348K, reserved 1138688K
+  class space    used 10863K, capacity 13973K, committed 14028K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 74.939 Thread 0x00007fc504023800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fc542759a90 method=java.util.Arrays.deepEquals([Ljava/lang/Object;[Ljava/lang/Object;)Z @ 73
+Event: 74.949 Thread 0x00007fc504023800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fc542b9e394 method=java.lang.StackTraceElement.equals(Ljava/lang/Object;)Z @ 32
+Event: 74.949 Thread 0x00007fc504023800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fc541650278 method=java.util.Arrays.deepEquals([Ljava/lang/Object;[Ljava/lang/Object;)Z @ 73
+Event: 79.947 Thread 0x00007fc504023800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fc5411f7530 method=java.util.Arrays.deepEquals([Ljava/lang/Object;[Ljava/lang/Object;)Z @ 23
+Event: 100.702 Thread 0x00007fc504023800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fc542423c48 method=org.netbeans.modules.sampler.Sampler.updateStats(J)V @ 67
+Event: 100.704 Thread 0x00007fc504023800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fc541a56bcc method=sun.misc.VM.toThreadState(I)Ljava/lang/Thread$State; @ 15
+Event: 100.723 Thread 0x00007fc504023800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fc5411c8878 method=org.netbeans.modules.sampler.Sampler.updateStats(J)V @ 84
+Event: 122.003 Thread 0x00007fc4e4006800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fc542ddbc8c method=java.net.URLStreamHandler.parseURL(Ljava/net/URL;Ljava/lang/String;II)V @ 167
+Event: 122.311 Thread 0x00007fc504023800 Uncommon trap: reason=null_check action=make_not_entrant pc=0x00007fc542bf4c2c method=org.netbeans.modules.sampler.SamplesOutputStream.writeSample([Ljava/lang/management/ThreadInfo;JJ)V @ 96
+Event: 122.862 Thread 0x00007fc4e4006800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fc542dd4814 method=java.lang.Long.parseLong(Ljava/lang/String;I)J @ 1
+
+Internal exceptions (10 events):
+Event: 22.691 Thread 0x00007fc4d4569800 Implicit null exception at 0x00007fc5431c59d3 to 0x00007fc5431c6030
+Event: 39.214 Thread 0x00007fc4e4006800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000077a6acba8) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u91/6644/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 605]
+Event: 39.214 Thread 0x00007fc4e4006800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000077a6ad9b8) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u91/6644/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 605]
+Event: 39.214 Thread 0x00007fc4e4006800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000077a6af478) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u91/6644/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 605]
+Event: 39.215 Thread 0x00007fc4e4006800 Exception <a 'java/security/PrivilegedActionException'> (0x000000077a6b2698) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u91/6644/hotspot/src/share/vm/prims/jvm.cpp, line 1386]
+Event: 39.215 Thread 0x00007fc4e4006800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000077a6b39b8) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u91/6644/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 605]
+Event: 39.215 Thread 0x00007fc4e4006800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000077a6b4838) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u91/6644/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 605]
+Event: 39.216 Thread 0x00007fc4e4006800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000077a6b75d8) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u91/6644/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 605]
+Event: 122.311 Thread 0x00007fc504023800 Implicit null exception at 0x00007fc542bf392b to 0x00007fc542bf4bad
+Event: 122.862 Thread 0x00007fc4e4006800 Implicit null exception at 0x00007fc542dd41ef to 0x00007fc542dd4801
+
+Events (10 events):
+Event: 130.265 Executing VM operation: ThreadDump
+Event: 130.265 Executing VM operation: ThreadDump done
+Event: 130.275 Executing VM operation: ThreadDump
+Event: 130.275 Executing VM operation: ThreadDump done
+Event: 130.284 Executing VM operation: ThreadDump
+Event: 130.285 Executing VM operation: ThreadDump done
+Event: 130.294 Executing VM operation: ThreadDump
+Event: 130.294 Executing VM operation: ThreadDump done
+Event: 130.305 Executing VM operation: ThreadDump
+Event: 130.305 Executing VM operation: ThreadDump done
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 08:02 16784932                           /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/bin/java
+00600000-00601000 rw-p 00000000 08:02 16784932                           /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/bin/java
+0242e000-02571000 rw-p 00000000 00:00 0                                  [heap]
+6c6800000-6e5300000 rw-p 00000000 00:00 0 
+6e5300000-76cd80000 ---p 00000000 00:00 0 
+76cd80000-790580000 rw-p 00000000 00:00 0 
+790580000-7c0000000 ---p 00000000 00:00 0 
+7c0000000-7c0dd3000 rw-p 00000000 00:00 0 
+7c0dd3000-800000000 ---p 00000000 00:00 0 
+7fc4ab2b7000-7fc4ab3b7000 rw-p 00000000 00:00 0 
+7fc4ab3b7000-7fc4ab4b7000 ---p 00000000 00:00 0 
+7fc4ab4b7000-7fc4ab4cb000 r-xp 00000000 08:02 16651884                   /opt/microchip/mplabcomm/v3.22.00/lib/libSerialAccessLink_3_15.so
+7fc4ab4cb000-7fc4ab6ca000 ---p 00014000 08:02 16651884                   /opt/microchip/mplabcomm/v3.22.00/lib/libSerialAccessLink_3_15.so
+7fc4ab6ca000-7fc4ab6cb000 r--p 00013000 08:02 16651884                   /opt/microchip/mplabcomm/v3.22.00/lib/libSerialAccessLink_3_15.so
+7fc4ab6cb000-7fc4ab6cc000 rw-p 00014000 08:02 16651884                   /opt/microchip/mplabcomm/v3.22.00/lib/libSerialAccessLink_3_15.so
+7fc4ab6cc000-7fc4ab6d0000 rw-p 00000000 00:00 0 
+7fc4ab6d0000-7fc4ab6dc000 r-xp 00000000 08:02 16651886                   /opt/microchip/mplabcomm/v3.22.00/lib/libmchpusb-1.0.so.0.0.0
+7fc4ab6dc000-7fc4ab8dc000 ---p 0000c000 08:02 16651886                   /opt/microchip/mplabcomm/v3.22.00/lib/libmchpusb-1.0.so.0.0.0
+7fc4ab8dc000-7fc4ab8dd000 r--p 0000c000 08:02 16651886                   /opt/microchip/mplabcomm/v3.22.00/lib/libmchpusb-1.0.so.0.0.0
+7fc4ab8dd000-7fc4ab8de000 rw-p 0000d000 08:02 16651886                   /opt/microchip/mplabcomm/v3.22.00/lib/libmchpusb-1.0.so.0.0.0
+7fc4ab8de000-7fc4ab9c4000 r-xp 00000000 08:02 12717580                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19
+7fc4ab9c4000-7fc4abbc3000 ---p 000e6000 08:02 12717580                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19
+7fc4abbc3000-7fc4abbcb000 r--p 000e5000 08:02 12717580                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19
+7fc4abbcb000-7fc4abbcd000 rw-p 000ed000 08:02 12717580                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19
+7fc4abbcd000-7fc4abbe2000 rw-p 00000000 00:00 0 
+7fc4abbe2000-7fc4abc01000 r-xp 00000000 08:02 16651883                   /opt/microchip/mplabcomm/v3.22.00/lib/libUSBAccessLink_3_22.so
+7fc4abc01000-7fc4abe00000 ---p 0001f000 08:02 16651883                   /opt/microchip/mplabcomm/v3.22.00/lib/libUSBAccessLink_3_22.so
+7fc4abe00000-7fc4abe01000 r--p 0001e000 08:02 16651883                   /opt/microchip/mplabcomm/v3.22.00/lib/libUSBAccessLink_3_22.so
+7fc4abe01000-7fc4abe02000 rw-p 0001f000 08:02 16651883                   /opt/microchip/mplabcomm/v3.22.00/lib/libUSBAccessLink_3_22.so
+7fc4abe02000-7fc4ac002000 rw-p 00000000 00:00 0 
+7fc4ac002000-7fc4ac202000 rw-p 00000000 00:00 0 
+7fc4ac202000-7fc4ac402000 rw-p 00000000 00:00 0 
+7fc4ac402000-7fc4ac602000 rw-p 00000000 00:00 0 
+7fc4ac602000-7fc4ac802000 rw-p 00000000 00:00 0 
+7fc4ac802000-7fc4aca02000 rw-p 00000000 00:00 0 
+7fc4aca02000-7fc4acdcb000 r--s 00000000 08:02 1050211                    /home/chainatee/.cache/mplab_ide/dev/v3.55/var/dict/dictionary_en_US.trie2
+7fc4acdcb000-7fc4acfcb000 rw-p 00000000 00:00 0 
+7fc4acfcb000-7fc4ad1cb000 rw-p 00000000 00:00 0 
+7fc4ad7ce000-7fc4ad7d1000 ---p 00000000 00:00 0 
+7fc4ad7d1000-7fc4ad9cf000 rw-p 00000000 00:00 0 
+7fc4addd1000-7fc4adfd1000 rw-p 00000000 00:00 0 
+7fc4adfd1000-7fc4adfd4000 ---p 00000000 00:00 0 
+7fc4adfd4000-7fc4ae1d2000 rw-p 00000000 00:00 0 
+7fc4ae1d2000-7fc4ae1d5000 ---p 00000000 00:00 0 
+7fc4ae1d5000-7fc4ae3d3000 rw-p 00000000 00:00 0 
+7fc4ae3d3000-7fc4ae3d6000 ---p 00000000 00:00 0 
+7fc4ae3d6000-7fc4ae5d4000 rw-p 00000000 00:00 0 
+7fc4ae5d4000-7fc4ae5d7000 ---p 00000000 00:00 0 
+7fc4ae5d7000-7fc4ae7d5000 rw-p 00000000 00:00 0 
+7fc4ae9d6000-7fc4ae9d9000 ---p 00000000 00:00 0 
+7fc4ae9d9000-7fc4aebd7000 rw-p 00000000 00:00 0 
+7fc4aedd8000-7fc4aeddb000 ---p 00000000 00:00 0 
+7fc4aeddb000-7fc4aefd9000 rw-p 00000000 00:00 0 
+7fc4aefd9000-7fc4aefdc000 ---p 00000000 00:00 0 
+7fc4aefdc000-7fc4af1da000 rw-p 00000000 00:00 0 
+7fc4af1da000-7fc4af1dd000 ---p 00000000 00:00 0 
+7fc4af1dd000-7fc4af3db000 rw-p 00000000 00:00 0 
+7fc4af3db000-7fc4af3f2000 r-xp 00000000 08:02 5505749                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fc4af3f2000-7fc4af5f2000 ---p 00017000 08:02 5505749                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fc4af5f2000-7fc4af5f3000 r--p 00017000 08:02 5505749                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fc4af5f3000-7fc4af5f4000 rw-p 00018000 08:02 5505749                    /lib/x86_64-linux-gnu/libresolv-2.19.so
+7fc4af5f4000-7fc4af5f6000 rw-p 00000000 00:00 0 
+7fc4af5f6000-7fc4af5fb000 r-xp 00000000 08:02 5505781                    /lib/x86_64-linux-gnu/libnss_dns-2.19.so
+7fc4af5fb000-7fc4af7fa000 ---p 00005000 08:02 5505781                    /lib/x86_64-linux-gnu/libnss_dns-2.19.so
+7fc4af7fa000-7fc4af7fb000 r--p 00004000 08:02 5505781                    /lib/x86_64-linux-gnu/libnss_dns-2.19.so
+7fc4af7fb000-7fc4af7fc000 rw-p 00005000 08:02 5505781                    /lib/x86_64-linux-gnu/libnss_dns-2.19.so
+7fc4af7fc000-7fc4af7fe000 r-xp 00000000 08:02 5505852                    /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+7fc4af7fe000-7fc4af9fd000 ---p 00002000 08:02 5505852                    /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+7fc4af9fd000-7fc4af9fe000 r--p 00001000 08:02 5505852                    /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+7fc4af9fe000-7fc4af9ff000 rw-p 00002000 08:02 5505852                    /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+7fc4af9ff000-7fc4afbff000 rw-p 00000000 00:00 0 
+7fc4afbff000-7fc4afdff000 rw-p 00000000 00:00 0 
+7fc4b0000000-7fc4b023e000 rw-p 00000000 00:00 0 
+7fc4b023e000-7fc4b4000000 ---p 00000000 00:00 0 
+7fc4b4000000-7fc4b40e2000 rw-p 00000000 00:00 0 
+7fc4b40e2000-7fc4b8000000 ---p 00000000 00:00 0 
+7fc4b8000000-7fc4b805c000 rw-p 00000000 00:00 0 
+7fc4b805c000-7fc4bc000000 ---p 00000000 00:00 0 
+7fc4bc099000-7fc4bc09c000 ---p 00000000 00:00 0 
+7fc4bc09c000-7fc4bc29a000 rw-p 00000000 00:00 0 
+7fc4bc49b000-7fc4bc49e000 ---p 00000000 00:00 0 
+7fc4bc49e000-7fc4bc89c000 rw-p 00000000 00:00 0 
+7fc4bc89c000-7fc4bca9c000 rw-p 00000000 00:00 0 
+7fc4bca9c000-7fc4bcc9c000 rw-p 00000000 00:00 0 
+7fc4bcc9c000-7fc4bcc9f000 ---p 00000000 00:00 0 
+7fc4bcc9f000-7fc4bce9d000 rw-p 00000000 00:00 0 
+7fc4bce9d000-7fc4bcea0000 ---p 00000000 00:00 0 
+7fc4bcea0000-7fc4bd09e000 rw-p 00000000 00:00 0 
+7fc4bd178000-7fc4bd378000 rw-p 00000000 00:00 0 
+7fc4bd378000-7fc4bd37b000 ---p 00000000 00:00 0 
+7fc4bd37b000-7fc4bd579000 rw-p 00000000 00:00 0 
+7fc4bd64e000-7fc4bd651000 ---p 00000000 00:00 0 
+7fc4bd651000-7fc4bda4f000 rw-p 00000000 00:00 0 
+7fc4bda4f000-7fc4bdc4f000 rw-p 00000000 00:00 0 
+7fc4bdc4f000-7fc4bde4f000 rw-p 00000000 00:00 0 
+7fc4bde4f000-7fc4bde52000 ---p 00000000 00:00 0 
+7fc4bde52000-7fc4be050000 rw-p 00000000 00:00 0 
+7fc4be050000-7fc4be07a000 r-xp 00000000 08:02 21110809                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libdcpr.so
+7fc4be07a000-7fc4be27a000 ---p 0002a000 08:02 21110809                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libdcpr.so
+7fc4be27a000-7fc4be27d000 rw-p 0002a000 08:02 21110809                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libdcpr.so
+7fc4be27d000-7fc4be4a6000 rw-s 00000000 00:05 8945676                    /SYSV00000000 (deleted)
+7fc4be4a6000-7fc4be6a6000 rw-p 00000000 00:00 0 
+7fc4be6a6000-7fc4be6a9000 ---p 00000000 00:00 0 
+7fc4be6a9000-7fc4beaa7000 rw-p 00000000 00:00 0 
+7fc4beaa7000-7fc4beaaa000 ---p 00000000 00:00 0 
+7fc4beaaa000-7fc4beca8000 rw-p 00000000 00:00 0 
+7fc4beca8000-7fc4becab000 ---p 00000000 00:00 0 
+7fc4becab000-7fc4bf0a9000 rw-p 00000000 00:00 0 
+7fc4bf16b000-7fc4bf36b000 rw-p 00000000 00:00 0 
+7fc4bf36b000-7fc4bf56b000 rw-p 00000000 00:00 0 
+7fc4bf56b000-7fc4bf5c0000 r-xp 00000000 08:02 21110810                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/liblcms.so
+7fc4bf5c0000-7fc4bf7c0000 ---p 00055000 08:02 21110810                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/liblcms.so
+7fc4bf7c0000-7fc4bf7c5000 rw-p 00055000 08:02 21110810                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/liblcms.so
+7fc4bf7c5000-7fc4bf7ff000 r-xp 00000000 08:02 21110807                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libjpeg.so
+7fc4bf7ff000-7fc4bf9ff000 ---p 0003a000 08:02 21110807                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libjpeg.so
+7fc4bf9ff000-7fc4bfa00000 rw-p 0003a000 08:02 21110807                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libjpeg.so
+7fc4bfa00000-7fc4bfc00000 rw-p 00000000 00:00 0 
+7fc4bfc00000-7fc4bfe00000 rw-p 00000000 00:00 0 
+7fc4bfe00000-7fc4c0000000 rw-p 00000000 00:00 0 
+7fc4c0000000-7fc4c012c000 rw-p 00000000 00:00 0 
+7fc4c012c000-7fc4c4000000 ---p 00000000 00:00 0 
+7fc4c4000000-7fc4c427a000 rw-p 00000000 00:00 0 
+7fc4c427a000-7fc4c8000000 ---p 00000000 00:00 0 
+7fc4c8000000-7fc4c8032000 rw-p 00000000 00:00 0 
+7fc4c8032000-7fc4cc000000 ---p 00000000 00:00 0 
+7fc4cc000000-7fc4cdef9000 rw-p 00000000 00:00 0 
+7fc4cdef9000-7fc4d0000000 ---p 00000000 00:00 0 
+7fc4d0000000-7fc4d041d000 rw-p 00000000 00:00 0 
+7fc4d041d000-7fc4d4000000 ---p 00000000 00:00 0 
+7fc4d4000000-7fc4d45e4000 rw-p 00000000 00:00 0 
+7fc4d45e4000-7fc4d8000000 ---p 00000000 00:00 0 
+7fc4d83a2000-7fc4d85a2000 rw-p 00000000 00:00 0 
+7fc4d85ac000-7fc4d87ac000 rw-p 00000000 00:00 0 
+7fc4d87ac000-7fc4d87af000 ---p 00000000 00:00 0 
+7fc4d87af000-7fc4d8bad000 rw-p 00000000 00:00 0 
+7fc4d8bad000-7fc4d8bb0000 ---p 00000000 00:00 0 
+7fc4d8bb0000-7fc4d8dae000 rw-p 00000000 00:00 0 
+7fc4d8dae000-7fc4d8db1000 ---p 00000000 00:00 0 
+7fc4d8db1000-7fc4d91af000 rw-p 00000000 00:00 0 
+7fc4d91af000-7fc4d91b2000 ---p 00000000 00:00 0 
+7fc4d91b2000-7fc4d93b0000 rw-p 00000000 00:00 0 
+7fc4d93b0000-7fc4d93b9000 r-xp 00000000 08:02 21110859                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libmanagement.so
+7fc4d93b9000-7fc4d95b8000 ---p 00009000 08:02 21110859                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libmanagement.so
+7fc4d95b8000-7fc4d95b9000 rw-p 00008000 08:02 21110859                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libmanagement.so
+7fc4d95b9000-7fc4d95bc000 ---p 00000000 00:00 0 
+7fc4d95bc000-7fc4d99ba000 rw-p 00000000 00:00 0 
+7fc4d99ba000-7fc4d9bba000 rw-p 00000000 00:00 0 
+7fc4d9bba000-7fc4d9dba000 rw-p 00000000 00:00 0 
+7fc4d9dba000-7fc4d9dbd000 ---p 00000000 00:00 0 
+7fc4d9dbd000-7fc4da1bb000 rw-p 00000000 00:00 0 
+7fc4da1bb000-7fc4da1be000 ---p 00000000 00:00 0 
+7fc4da1be000-7fc4da3bc000 rw-p 00000000 00:00 0 
+7fc4da3bc000-7fc4da3bf000 ---p 00000000 00:00 0 
+7fc4da3bf000-7fc4da5bd000 rw-p 00000000 00:00 0 
+7fc4da5bd000-7fc4da5c0000 ---p 00000000 00:00 0 
+7fc4da5c0000-7fc4da7be000 rw-p 00000000 00:00 0 
+7fc4da7be000-7fc4da7c1000 ---p 00000000 00:00 0 
+7fc4da7c1000-7fc4da9bf000 rw-p 00000000 00:00 0 
+7fc4da9bf000-7fc4da9c2000 ---p 00000000 00:00 0 
+7fc4da9c2000-7fc4dabc0000 rw-p 00000000 00:00 0 
+7fc4dabc0000-7fc4dabc3000 ---p 00000000 00:00 0 
+7fc4dabc3000-7fc4dadc1000 rw-p 00000000 00:00 0 
+7fc4dadc1000-7fc4dadc4000 ---p 00000000 00:00 0 
+7fc4dadc4000-7fc4dafc2000 rw-p 00000000 00:00 0 
+7fc4dafc2000-7fc4dafc5000 ---p 00000000 00:00 0 
+7fc4dafc5000-7fc4db3c3000 rw-p 00000000 00:00 0 
+7fc4db3c3000-7fc4db3c6000 ---p 00000000 00:00 0 
+7fc4db3c6000-7fc4db7c4000 rw-p 00000000 00:00 0 
+7fc4db7e5000-7fc4db7e6000 r--s 00000000 08:02 13793116                   /opt/microchip/mplabx/v3.55/mplab_ide/mplab_ide/modules/com-microchip-mplab-nbide-softwarenotification.jar
+7fc4db7e6000-7fc4db7f1000 r--s 00118000 08:02 13793204                   /opt/microchip/mplabx/v3.55/mplab_ide/mplab_ide/modules/docs/com-microchip-mplab-nbide-toolchainMPASMWIN.jar
+7fc4db7f1000-7fc4db7f3000 r--s 0003a000 08:02 13793051                   /opt/microchip/mplabx/v3.55/mplab_ide/mplab_ide/modules/com-microchip-mplab-nbide-toolchainMPASMWIN.jar
+7fc4db7f3000-7fc4db7f4000 r--s 0000e000 08:02 13793050                   /opt/microchip/mplabx/v3.55/mplab_ide/mplab_ide/modules/com-microchip-mplab-nbide-mplabsoftwareupdate.jar
+7fc4db7f4000-7fc4db7f6000 r--s 00009000 08:02 12595766                   /opt/microchip/mplabx/v3.55/mplab_ide/platform/modules/org-netbeans-modules-sampler.jar
+7fc4db7f6000-7fc4db7ff000 r--s 000f1000 08:02 13793196                   /opt/microchip/mplabx/v3.55/mplab_ide/mplab_ide/modules/com-microchip-mplab-nbide-embedded.jar
+7fc4db7ff000-7fc4db802000 r--s 0003a000 08:02 13793062                   /opt/microchip/mplabx/v3.55/mplab_ide/mplab_ide/modules/com-microchip-mplab-nbide-toolchainCommon.jar
+7fc4db802000-7fc4db805000 r--s 00021000 08:02 13793052                   /opt/microchip/mplabx/v3.55/mplab_ide/mplab_ide/modules/com-microchip-mplab-nbide-toolchain-license.jar
+7fc4db805000-7fc4db808000 r--s 00020000 08:02 13111319                   /opt/microchip/mplabx/v3.55/mplab_ide/mplablibs/modules/com-microchip-mplab-libs-atbackend.jar
+7fc4db808000-7fc4db80a000 r--s 0001f000 08:02 13245290                   /opt/microchip/mplabx/v3.55/mplab_ide/mdbcore/modules/com-microchip-mplab-mdbcore-AtmelIce.jar
+7fc4db80a000-7fc4db80d000 r--s 0004d000 08:02 13115603                   /opt/microchip/mplabx/v3.55/mplab_ide/mplablibs/modules/com-microchip-mplab-comm.jar
+7fc4db80d000-7fc4db82c000 r--s 0031b000 08:02 13793193                   /opt/microchip/mplabx/v3.55/mplab_ide/mplab_ide/modules/com-microchip-mplab-debugger-mdb.jar
+7fc4db82c000-7fc4db83c000 r--s 00176000 08:02 12596930                   /opt/microchip/mplabx/v3.55/mplab_ide/ide/modules/org-netbeans-modules-projectui.jar
+7fc4db83c000-7fc4db868000 r--s 006d2000 08:02 13793192                   /opt/microchip/mplabx/v3.55/mplab_ide/mplab_ide/modules/com-microchip-mplab-nbide-embedded-makeproject.jar
+7fc4db868000-7fc4db87f000 r-xp 00000000 08:02 12595783                   /opt/microchip/mplabx/v3.55/mplab_ide/platform/modules/lib/amd64/linux/libjnidispatch-410.so
+7fc4db87f000-7fc4db97e000 ---p 00017000 08:02 12595783                   /opt/microchip/mplabx/v3.55/mplab_ide/platform/modules/lib/amd64/linux/libjnidispatch-410.so
+7fc4db97e000-7fc4db980000 rw-p 00016000 08:02 12595783                   /opt/microchip/mplabx/v3.55/mplab_ide/platform/modules/lib/amd64/linux/libjnidispatch-410.so
+7fc4db980000-7fc4db9e9000 r-xp 00000000 08:02 21110822                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libt2k.so
+7fc4db9e9000-7fc4dbbe9000 ---p 00069000 08:02 21110822                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libt2k.so
+7fc4dbbe9000-7fc4dbbf0000 rw-p 00069000 08:02 21110822                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libt2k.so
+7fc4dbbf0000-7fc4dbe00000 rw-p 00000000 00:00 0 
+7fc4dbe00000-7fc4dc000000 rw-p 00000000 00:00 0 
+7fc4dc000000-7fc4dc2cd000 rw-p 00000000 00:00 0 
+7fc4dc2cd000-7fc4e0000000 ---p 00000000 00:00 0 
+7fc4e0000000-7fc4e0092000 rw-p 00000000 00:00 0 
+7fc4e0092000-7fc4e4000000 ---p 00000000 00:00 0 
+7fc4e4000000-7fc4e4021000 rw-p 00000000 00:00 0 
+7fc4e4021000-7fc4e8000000 ---p 00000000 00:00 0 
+7fc4e8000000-7fc4e82bd000 rw-p 00000000 00:00 0 
+7fc4e82bd000-7fc4ec000000 ---p 00000000 00:00 0 
+7fc4ec000000-7fc4ec6ed000 rw-p 00000000 00:00 0 
+7fc4ec6ed000-7fc4f0000000 ---p 00000000 00:00 0 
+7fc4f0000000-7fc4f06b2000 rw-p 00000000 00:00 0 
+7fc4f06b2000-7fc4f4000000 ---p 00000000 00:00 0 
+7fc4f4000000-7fc4f42a7000 rw-p 00000000 00:00 0 
+7fc4f42a7000-7fc4f8000000 ---p 00000000 00:00 0 
+7fc4f8000000-7fc4f80c2000 rw-p 00000000 00:00 0 
+7fc4f80c2000-7fc4fc000000 ---p 00000000 00:00 0 
+7fc4fc000000-7fc4fc022000 r--s 00445000 08:02 13521342                   /opt/microchip/mplabx/v3.55/mplab_ide/cnd/modules/org-netbeans-modules-cnd-makeproject.jar
+7fc4fc022000-7fc4fc028000 r--s 00097000 08:02 12596931                   /opt/microchip/mplabx/v3.55/mplab_ide/ide/modules/org-netbeans-modules-versioning-ui.jar
+7fc4fc028000-7fc4fc02d000 r--s 0005c000 08:02 13521357                   /opt/microchip/mplabx/v3.55/mplab_ide/cnd/modules/org-netbeans-modules-cnd-repository.jar
+7fc4fc02d000-7fc4fc04c000 r--s 001b3000 08:02 12596916                   /opt/microchip/mplabx/v3.55/mplab_ide/ide/modules/org-eclipse-jgit.jar
+7fc4fc04c000-7fc4fc052000 r--s 0009d000 08:02 12596950                   /opt/microchip/mplabx/v3.55/mplab_ide/ide/modules/org-netbeans-libs-git.jar
+7fc4fc052000-7fc4fc06f000 r--s 00335000 08:02 12596927                   /opt/microchip/mplabx/v3.55/mplab_ide/ide/modules/org-netbeans-modules-git.jar
+7fc4fc06f000-7fc4fc076000 r--s 000eb000 08:02 13521346                   /opt/microchip/mplabx/v3.55/mplab_ide/cnd/modules/org-netbeans-modules-cnd-apt.jar
+7fc4fc076000-7fc4fc081000 r--s 00162000 08:02 12596915                   /opt/microchip/mplabx/v3.55/mplab_ide/ide/modules/org-netbeans-modules-parsing-api.jar
+7fc4fc081000-7fc4fc0b4000 r--s 0095c000 08:02 13521356                   /opt/microchip/mplabx/v3.55/mplab_ide/cnd/modules/org-netbeans-modules-cnd-modelimpl.jar
+7fc4fc0b4000-7fc4fc0b7000 ---p 00000000 00:00 0 
+7fc4fc0b7000-7fc4fc2b5000 rw-p 00000000 00:00 0 
+7fc4fc2b5000-7fc4fc2b8000 ---p 00000000 00:00 0 
+7fc4fc2b8000-7fc4fc4b6000 rw-p 00000000 00:00 0 
+7fc4fc4b6000-7fc4fc4b9000 ---p 00000000 00:00 0 
+7fc4fc4b9000-7fc4fc6b7000 rw-p 00000000 00:00 0 
+7fc4fc6b7000-7fc4fc6bc000 r-xp 00000000 08:02 12716578                   /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7fc4fc6bc000-7fc4fc8bb000 ---p 00005000 08:02 12716578                   /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7fc4fc8bb000-7fc4fc8bc000 r--p 00004000 08:02 12716578                   /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7fc4fc8bc000-7fc4fc8bd000 rw-p 00005000 08:02 12716578                   /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7fc4fc8bd000-7fc4fc8c6000 r-xp 00000000 08:02 12716570                   /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7fc4fc8c6000-7fc4fcac5000 ---p 00009000 08:02 12716570                   /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7fc4fcac5000-7fc4fcac6000 r--p 00008000 08:02 12716570                   /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7fc4fcac6000-7fc4fcac7000 rw-p 00009000 08:02 12716570                   /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7fc4fcac7000-7fc500000000 rw-p 00000000 00:00 0 
+7fc500000000-7fc500021000 rw-p 00000000 00:00 0 
+7fc500021000-7fc504000000 ---p 00000000 00:00 0 
+7fc504000000-7fc504071000 rw-p 00000000 00:00 0 
+7fc504071000-7fc508000000 ---p 00000000 00:00 0 
+7fc508000000-7fc509b07000 rw-p 00000000 00:00 0 
+7fc509b07000-7fc50c000000 ---p 00000000 00:00 0 
+7fc50c000000-7fc50d27a000 rw-p 00000000 00:00 0 
+7fc50d27a000-7fc510000000 ---p 00000000 00:00 0 
+7fc510000000-7fc510021000 rw-p 00000000 00:00 0 
+7fc510021000-7fc514000000 ---p 00000000 00:00 0 
+7fc514000000-7fc515436000 rw-p 00000000 00:00 0 
+7fc515436000-7fc518000000 ---p 00000000 00:00 0 
+7fc518000000-7fc51820c000 rw-p 00000000 00:00 0 
+7fc51820c000-7fc51c000000 ---p 00000000 00:00 0 
+7fc51c000000-7fc51c021000 rw-p 00000000 00:00 0 
+7fc51c021000-7fc520000000 ---p 00000000 00:00 0 
+7fc520000000-7fc52000a000 r--s 000fc000 08:02 12596949                   /opt/microchip/mplabx/v3.55/mplab_ide/ide/modules/org-netbeans-modules-css-editor.jar
+7fc52000a000-7fc520011000 r--s 0007c000 08:02 13521345                   /opt/microchip/mplabx/v3.55/mplab_ide/cnd/modules/org-netbeans-modules-cnd-highlight.jar
+7fc520011000-7fc520019000 r--s 0007a000 08:02 12596864                   /opt/microchip/mplabx/v3.55/mplab_ide/platform/modules/ext/felix-4.2.1.jar
+7fc520019000-7fc52002d000 r--s 00140000 08:02 12596867                   /opt/microchip/mplabx/v3.55/mplab_ide/platform/modules/ext/org.eclipse.osgi_3.9.1.v20140110-1610.jar
+7fc52002d000-7fc520033000 r--s 00055000 08:02 13521338                   /opt/microchip/mplabx/v3.55/mplab_ide/cnd/modules/org-netbeans-modules-cnd-model-services.jar
+7fc520033000-7fc52003d000 r--s 00115000 08:02 13521354                   /opt/microchip/mplabx/v3.55/mplab_ide/cnd/modules/org-netbeans-modules-cnd-refactoring.jar
+7fc52003d000-7fc520040000 ---p 00000000 00:00 0 
+7fc520040000-7fc520076000 rw-p 00000000 00:00 0 
+7fc520076000-7fc52013c000 r--s 00000000 08:02 1049984                    /home/chainatee/.cache/mplab_ide/dev/v3.55/var/all-layers.dat
+7fc52013c000-7fc52013f000 ---p 00000000 00:00 0 
+7fc52013f000-7fc52033d000 rw-p 00000000 00:00 0 
+7fc52033d000-7fc52039e000 r-xp 00000000 08:02 21110863                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libsplashscreen.so
+7fc52039e000-7fc52059e000 ---p 00061000 08:02 21110863                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libsplashscreen.so
+7fc52059e000-7fc52059f000 rw-p 00061000 08:02 21110863                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libsplashscreen.so
+7fc52059f000-7fc5207a2000 rw-p 00000000 00:00 0 
+7fc5207a2000-7fc5207b8000 r-xp 00000000 08:02 5505798                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fc5207b8000-7fc5209b7000 ---p 00016000 08:02 5505798                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fc5209b7000-7fc5209b8000 rw-p 00015000 08:02 5505798                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fc5209b8000-7fc520a1d000 r-xp 00000000 08:02 21110834                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libfontmanager.so
+7fc520a1d000-7fc520c1c000 ---p 00065000 08:02 21110834                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libfontmanager.so
+7fc520c1c000-7fc520c21000 rw-p 00064000 08:02 21110834                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libfontmanager.so
+7fc520c21000-7fc520c31000 rw-p 00000000 00:00 0 
+7fc520c31000-7fc520c34000 ---p 00000000 00:00 0 
+7fc520c34000-7fc520e32000 rw-p 00000000 00:00 0 
+7fc520e32000-7fc520e35000 ---p 00000000 00:00 0 
+7fc520e35000-7fc521033000 rw-p 00000000 00:00 0 
+7fc521033000-7fc521036000 ---p 00000000 00:00 0 
+7fc521036000-7fc521234000 rw-p 00000000 00:00 0 
+7fc521234000-7fc521239000 r-xp 00000000 08:02 12716574                   /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7fc521239000-7fc521438000 ---p 00005000 08:02 12716574                   /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7fc521438000-7fc521439000 r--p 00004000 08:02 12716574                   /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7fc521439000-7fc52143a000 rw-p 00005000 08:02 12716574                   /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7fc52143a000-7fc52143c000 r-xp 00000000 08:02 12716563                   /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7fc52143c000-7fc52163c000 ---p 00002000 08:02 12716563                   /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7fc52163c000-7fc52163d000 r--p 00002000 08:02 12716563                   /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7fc52163d000-7fc52163e000 rw-p 00003000 08:02 12716563                   /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7fc52163e000-7fc52165b000 r-xp 00000000 08:02 12717773                   /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7fc52165b000-7fc52185b000 ---p 0001d000 08:02 12717773                   /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7fc52185b000-7fc52185c000 r--p 0001d000 08:02 12717773                   /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7fc52185c000-7fc52185d000 rw-p 0001e000 08:02 12717773                   /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7fc52185d000-7fc52186c000 r-xp 00000000 08:02 12716584                   /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7fc52186c000-7fc521a6b000 ---p 0000f000 08:02 12716584                   /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7fc521a6b000-7fc521a6c000 r--p 0000e000 08:02 12716584                   /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7fc521a6c000-7fc521a6d000 rw-p 0000f000 08:02 12716584                   /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7fc521a6d000-7fc521a72000 r-xp 00000000 08:02 12716604                   /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7fc521a72000-7fc521c71000 ---p 00005000 08:02 12716604                   /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7fc521c71000-7fc521c72000 r--p 00004000 08:02 12716604                   /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7fc521c72000-7fc521c73000 rw-p 00005000 08:02 12716604                   /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7fc521c73000-7fc521c7c000 r-xp 00000000 08:02 12716598                   /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7fc521c7c000-7fc521e7b000 ---p 00009000 08:02 12716598                   /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7fc521e7b000-7fc521e7c000 r--p 00008000 08:02 12716598                   /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7fc521e7c000-7fc521e7d000 rw-p 00009000 08:02 12716598                   /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7fc521e7d000-7fc521fad000 r-xp 00000000 08:02 12716559                   /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7fc521fad000-7fc5221ad000 ---p 00130000 08:02 12716559                   /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7fc5221ad000-7fc5221ae000 r--p 00130000 08:02 12716559                   /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7fc5221ae000-7fc5221b2000 rw-p 00131000 08:02 12716559                   /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7fc5221b2000-7fc5221c3000 r-xp 00000000 08:02 12716576                   /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7fc5221c3000-7fc5223c2000 ---p 00011000 08:02 12716576                   /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7fc5223c2000-7fc5223c3000 r--p 00010000 08:02 12716576                   /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7fc5223c3000-7fc5223c4000 rw-p 00011000 08:02 12716576                   /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7fc5223c4000-7fc522418000 r-xp 00000000 08:02 21110858                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libawt_xawt.so
+7fc522418000-7fc522618000 ---p 00054000 08:02 21110858                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libawt_xawt.so
+7fc522618000-7fc52261c000 rw-p 00054000 08:02 21110858                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libawt_xawt.so
+7fc52261c000-7fc52261d000 rw-p 00000000 00:00 0 
+7fc52261d000-7fc5226bf000 r-xp 00000000 08:02 21110844                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libawt.so
+7fc5226bf000-7fc5228bf000 ---p 000a2000 08:02 21110844                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libawt.so
+7fc5228bf000-7fc5228cb000 rw-p 000a2000 08:02 21110844                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libawt.so
+7fc5228cb000-7fc5228ef000 rw-p 00000000 00:00 0 
+7fc5228ef000-7fc5228f2000 ---p 00000000 00:00 0 
+7fc5228f2000-7fc522af0000 rw-p 00000000 00:00 0 
+7fc522af0000-7fc522af3000 ---p 00000000 00:00 0 
+7fc522af3000-7fc522cf1000 rw-p 00000000 00:00 0 
+7fc522cf1000-7fc522d07000 r-xp 00000000 08:02 21110851                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libnet.so
+7fc522d07000-7fc522f07000 ---p 00016000 08:02 21110851                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libnet.so
+7fc522f07000-7fc522f08000 rw-p 00016000 08:02 21110851                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libnet.so
+7fc522f08000-7fc522f19000 r-xp 00000000 08:02 21110854                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libnio.so
+7fc522f19000-7fc523118000 ---p 00011000 08:02 21110854                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libnio.so
+7fc523118000-7fc523119000 rw-p 00010000 08:02 21110854                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libnio.so
+7fc523119000-7fc52311a000 ---p 00000000 00:00 0 
+7fc52311a000-7fc52321a000 rw-p 00000000 00:00 0 
+7fc52321a000-7fc52321d000 ---p 00000000 00:00 0 
+7fc52321d000-7fc52341b000 rw-p 00000000 00:00 0 
+7fc52341b000-7fc52341e000 ---p 00000000 00:00 0 
+7fc52341e000-7fc52351c000 rw-p 00000000 00:00 0 
+7fc52351c000-7fc52351f000 ---p 00000000 00:00 0 
+7fc52351f000-7fc52371d000 rw-p 00000000 00:00 0 
+7fc52371d000-7fc523dff000 r--p 00000000 08:02 12452149                   /usr/lib/locale/locale-archive
+7fc523dff000-7fc523e02000 ---p 00000000 00:00 0 
+7fc523e02000-7fc524000000 rw-p 00000000 00:00 0 
+7fc524000000-7fc5241b3000 rw-p 00000000 00:00 0 
+7fc5241b3000-7fc528000000 ---p 00000000 00:00 0 
+7fc528000000-7fc528005000 r--s 00036000 08:02 13521248                   /opt/microchip/mplabx/v3.55/mplab_ide/cnd/modules/org-netbeans-modules-cnd-api-model.jar
+7fc528005000-7fc528008000 ---p 00000000 00:00 0 
+7fc528008000-7fc52803e000 rw-p 00000000 00:00 0 
+7fc52803e000-7fc528041000 ---p 00000000 00:00 0 
+7fc528041000-7fc52813f000 rw-p 00000000 00:00 0 
+7fc52813f000-7fc528142000 ---p 00000000 00:00 0 
+7fc528142000-7fc530000000 rw-p 00000000 00:00 0 
+7fc530000000-7fc530052000 rw-p 00000000 00:00 0 
+7fc530052000-7fc534000000 ---p 00000000 00:00 0 
+7fc534000000-7fc534021000 rw-p 00000000 00:00 0 
+7fc534021000-7fc538000000 ---p 00000000 00:00 0 
+7fc538000000-7fc53804a000 rw-p 00000000 00:00 0 
+7fc53804a000-7fc53c000000 ---p 00000000 00:00 0 
+7fc53c000000-7fc53c077000 rw-p 00000000 00:00 0 
+7fc53c077000-7fc540000000 ---p 00000000 00:00 0 
+7fc540000000-7fc540001000 r--s 0000c000 08:02 13245275                   /opt/microchip/mplabx/v3.55/mplab_ide/mdbcore/modules/com-microchip-mplab-mdbcore-platformtool.jar
+7fc540001000-7fc540003000 r--s 00018000 08:02 12595856                   /opt/microchip/mplabx/v3.55/mplab_ide/ide/modules/org-eclipse-equinox-common.jar
+7fc540003000-7fc540005000 r--s 00000000 08:02 12595930                   /opt/microchip/mplabx/v3.55/mplab_ide/platform/modules/org-netbeans-libs-felix.jar
+7fc540005000-7fc54000c000 r--s 00085000 08:02 13521355                   /opt/microchip/mplabx/v3.55/mplab_ide/cnd/modules/org-netbeans-modules-cnd-navigation.jar
+7fc54000c000-7fc54001f000 r--s 00344000 08:02 16916300                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/resources.jar
+7fc54001f000-7fc5400b4000 r--s 01103000 08:02 17700193                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/ext/jfxrt.jar
+7fc5400b4000-7fc5400d0000 r--s 00393000 08:02 17700192                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/ext/cldrdata.jar
+7fc5400d0000-7fc5400d3000 ---p 00000000 00:00 0 
+7fc5400d3000-7fc5401d1000 rw-p 00000000 00:00 0 
+7fc5401d1000-7fc5401d2000 ---p 00000000 00:00 0 
+7fc5401d2000-7fc541000000 rw-p 00000000 00:00 0 
+7fc541000000-7fc543360000 rwxp 00000000 00:00 0 
+7fc543360000-7fc550000000 ---p 00000000 00:00 0 
+7fc550000000-7fc5503b2000 rw-p 00000000 00:00 0 
+7fc5503b2000-7fc554000000 ---p 00000000 00:00 0 
+7fc554000000-7fc554001000 r--s 00013000 08:02 12595748                   /opt/microchip/mplabx/v3.55/mplab_ide/platform/modules/org-netbeans-modules-netbinox.jar
+7fc554001000-7fc554004000 r--s 0001a000 08:02 16916307                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/jce.jar
+7fc554004000-7fc554006000 r--s 00001000 08:02 17700191                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/ext/dnsns.jar
+7fc554006000-7fc55400a000 r--s 00097000 08:02 16916301                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/jsse.jar
+7fc55400a000-7fc554014000 r--s 00116000 08:02 17700199                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/ext/localedata.jar
+7fc554014000-7fc554016000 r--s 00000000 08:02 12596270                   /opt/microchip/mplabx/v3.55/mplab_ide/platform/lib/locale/org-openide-util_zh_CN.jar
+7fc554016000-7fc554017000 r--s 00000000 08:02 12596271                   /opt/microchip/mplabx/v3.55/mplab_ide/platform/lib/locale/org-openide-util-lookup_zh_CN.jar
+7fc554017000-7fc554018000 r--s 00000000 08:02 12596272                   /opt/microchip/mplabx/v3.55/mplab_ide/platform/lib/locale/org-openide-modules_zh_CN.jar
+7fc554018000-7fc554019000 r--s 00000000 08:02 12595906                   /opt/microchip/mplabx/v3.55/mplab_ide/platform/lib/locale/boot_zh_CN.jar
+7fc554019000-7fc55401a000 r--s 00029000 08:02 13521231                   /opt/microchip/mplabx/v3.55/mplab_ide/nb/core/locale/core_nb.jar
+7fc55401a000-7fc55401b000 r--s 00000000 08:02 13521310                   /opt/microchip/mplabx/v3.55/mplab_ide/nb/core/locale/org-netbeans-upgrader_zh_CN.jar
+7fc55401b000-7fc55401c000 r--s 00000000 08:02 13521263                   /opt/microchip/mplabx/v3.55/mplab_ide/nb/core/locale/core_nb_zh_CN.jar
+7fc55401c000-7fc55401f000 r--s 0004c000 08:02 13521336                   /opt/microchip/mplabx/v3.55/mplab_ide/nb/core/org-netbeans-upgrader.jar
+7fc55401f000-7fc5542f4000 rw-p 00000000 00:00 0 
+7fc5542f4000-7fc5544cd000 r--s 03d1f000 08:02 16916296                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/rt.jar
+7fc5544cd000-7fc55550f000 rw-p 00000000 00:00 0 
+7fc55550f000-7fc555510000 ---p 00000000 00:00 0 
+7fc555510000-7fc555610000 rw-p 00000000 00:00 0 
+7fc555610000-7fc555611000 ---p 00000000 00:00 0 
+7fc555611000-7fc555711000 rw-p 00000000 00:00 0 
+7fc555711000-7fc555712000 ---p 00000000 00:00 0 
+7fc555712000-7fc555908000 rw-p 00000000 00:00 0 
+7fc555908000-7fc555d45000 ---p 00000000 00:00 0 
+7fc555d45000-7fc555e3b000 rw-p 00000000 00:00 0 
+7fc555e3b000-7fc556277000 ---p 00000000 00:00 0 
+7fc556277000-7fc556394000 rw-p 00000000 00:00 0 
+7fc556394000-7fc556511000 ---p 00000000 00:00 0 
+7fc556511000-7fc5565a0000 rw-p 00000000 00:00 0 
+7fc5565a0000-7fc5568d2000 ---p 00000000 00:00 0 
+7fc5568d2000-7fc5568ec000 r-xp 00000000 08:02 21110847                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libzip.so
+7fc5568ec000-7fc556aec000 ---p 0001a000 08:02 21110847                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libzip.so
+7fc556aec000-7fc556aed000 rw-p 0001a000 08:02 21110847                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libzip.so
+7fc556aed000-7fc556af7000 r-xp 00000000 08:02 5505840                    /lib/x86_64-linux-gnu/libnss_files-2.19.so
+7fc556af7000-7fc556cf6000 ---p 0000a000 08:02 5505840                    /lib/x86_64-linux-gnu/libnss_files-2.19.so
+7fc556cf6000-7fc556cf7000 r--p 00009000 08:02 5505840                    /lib/x86_64-linux-gnu/libnss_files-2.19.so
+7fc556cf7000-7fc556cf8000 rw-p 0000a000 08:02 5505840                    /lib/x86_64-linux-gnu/libnss_files-2.19.so
+7fc556cf8000-7fc556d03000 r-xp 00000000 08:02 5505750                    /lib/x86_64-linux-gnu/libnss_nis-2.19.so
+7fc556d03000-7fc556f02000 ---p 0000b000 08:02 5505750                    /lib/x86_64-linux-gnu/libnss_nis-2.19.so
+7fc556f02000-7fc556f03000 r--p 0000a000 08:02 5505750                    /lib/x86_64-linux-gnu/libnss_nis-2.19.so
+7fc556f03000-7fc556f04000 rw-p 0000b000 08:02 5505750                    /lib/x86_64-linux-gnu/libnss_nis-2.19.so
+7fc556f04000-7fc556f1b000 r-xp 00000000 08:02 5505782                    /lib/x86_64-linux-gnu/libnsl-2.19.so
+7fc556f1b000-7fc55711a000 ---p 00017000 08:02 5505782                    /lib/x86_64-linux-gnu/libnsl-2.19.so
+7fc55711a000-7fc55711b000 r--p 00016000 08:02 5505782                    /lib/x86_64-linux-gnu/libnsl-2.19.so
+7fc55711b000-7fc55711c000 rw-p 00017000 08:02 5505782                    /lib/x86_64-linux-gnu/libnsl-2.19.so
+7fc55711c000-7fc55711e000 rw-p 00000000 00:00 0 
+7fc55711e000-7fc557127000 r-xp 00000000 08:02 5505778                    /lib/x86_64-linux-gnu/libnss_compat-2.19.so
+7fc557127000-7fc557326000 ---p 00009000 08:02 5505778                    /lib/x86_64-linux-gnu/libnss_compat-2.19.so
+7fc557326000-7fc557327000 r--p 00008000 08:02 5505778                    /lib/x86_64-linux-gnu/libnss_compat-2.19.so
+7fc557327000-7fc557328000 rw-p 00009000 08:02 5505778                    /lib/x86_64-linux-gnu/libnss_compat-2.19.so
+7fc557328000-7fc557352000 r-xp 00000000 08:02 21110842                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libjava.so
+7fc557352000-7fc557552000 ---p 0002a000 08:02 21110842                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libjava.so
+7fc557552000-7fc557554000 rw-p 0002a000 08:02 21110842                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libjava.so
+7fc557554000-7fc557561000 r-xp 00000000 08:02 21110846                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libverify.so
+7fc557561000-7fc557761000 ---p 0000d000 08:02 21110846                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libverify.so
+7fc557761000-7fc557763000 rw-p 0000d000 08:02 21110846                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/libverify.so
+7fc557763000-7fc55776a000 r-xp 00000000 08:02 5505747                    /lib/x86_64-linux-gnu/librt-2.19.so
+7fc55776a000-7fc557969000 ---p 00007000 08:02 5505747                    /lib/x86_64-linux-gnu/librt-2.19.so
+7fc557969000-7fc55796a000 r--p 00006000 08:02 5505747                    /lib/x86_64-linux-gnu/librt-2.19.so
+7fc55796a000-7fc55796b000 rw-p 00007000 08:02 5505747                    /lib/x86_64-linux-gnu/librt-2.19.so
+7fc55796b000-7fc55796e000 ---p 00000000 00:00 0 
+7fc55796e000-7fc557b6c000 rw-p 00000000 00:00 0 
+7fc557b6c000-7fc557c71000 r-xp 00000000 08:02 5505788                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fc557c71000-7fc557e70000 ---p 00105000 08:02 5505788                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fc557e70000-7fc557e71000 r--p 00104000 08:02 5505788                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fc557e71000-7fc557e72000 rw-p 00105000 08:02 5505788                    /lib/x86_64-linux-gnu/libm-2.19.so
+7fc557e72000-7fc558b32000 r-xp 00000000 08:02 21238602                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/server/libjvm.so
+7fc558b32000-7fc558d32000 ---p 00cc0000 08:02 21238602                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/server/libjvm.so
+7fc558d32000-7fc558e0a000 rw-p 00cc0000 08:02 21238602                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/server/libjvm.so
+7fc558e0a000-7fc558e55000 rw-p 00000000 00:00 0 
+7fc558e55000-7fc559013000 r-xp 00000000 08:02 5505777                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fc559013000-7fc559212000 ---p 001be000 08:02 5505777                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fc559212000-7fc559216000 r--p 001bd000 08:02 5505777                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fc559216000-7fc559218000 rw-p 001c1000 08:02 5505777                    /lib/x86_64-linux-gnu/libc-2.19.so
+7fc559218000-7fc55921d000 rw-p 00000000 00:00 0 
+7fc55921d000-7fc559220000 r-xp 00000000 08:02 5505841                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fc559220000-7fc55941f000 ---p 00003000 08:02 5505841                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fc55941f000-7fc559420000 r--p 00002000 08:02 5505841                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fc559420000-7fc559421000 rw-p 00003000 08:02 5505841                    /lib/x86_64-linux-gnu/libdl-2.19.so
+7fc559421000-7fc559436000 r-xp 00000000 08:02 21110826                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/jli/libjli.so
+7fc559436000-7fc559636000 ---p 00015000 08:02 21110826                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/jli/libjli.so
+7fc559636000-7fc559637000 rw-p 00015000 08:02 21110826                   /opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91/lib/amd64/jli/libjli.so
+7fc559637000-7fc559650000 r-xp 00000000 08:02 5505842                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fc559650000-7fc55984f000 ---p 00019000 08:02 5505842                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fc55984f000-7fc559850000 r--p 00018000 08:02 5505842                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fc559850000-7fc559851000 rw-p 00019000 08:02 5505842                    /lib/x86_64-linux-gnu/libpthread-2.19.so
+7fc559851000-7fc559855000 rw-p 00000000 00:00 0 
+7fc559855000-7fc559878000 r-xp 00000000 08:02 5505823                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fc559878000-7fc559879000 r--s 00027000 08:02 13793082                   /opt/microchip/mplabx/v3.55/mplab_ide/mplab_ide/core/locale/core_mplab.jar
+7fc559879000-7fc55987a000 r--s 00001000 08:02 12595916                   /opt/microchip/mplabx/v3.55/mplab_ide/platform/core/locale/core_zh_CN.jar
+7fc55987a000-7fc55987b000 r--s 00001000 08:02 12596269                   /opt/microchip/mplabx/v3.55/mplab_ide/platform/core/locale/org-openide-filesystems_zh_CN.jar
+7fc55987b000-7fc559880000 r--s 000bd000 08:02 12596872                   /opt/microchip/mplabx/v3.55/mplab_ide/platform/core/core.jar
+7fc559880000-7fc559887000 r--s 000ee000 08:02 12596873                   /opt/microchip/mplabx/v3.55/mplab_ide/platform/core/org-openide-filesystems.jar
+7fc559887000-7fc55988a000 r--s 00055000 08:02 12596874                   /opt/microchip/mplabx/v3.55/mplab_ide/platform/lib/org-openide-util-lookup.jar
+7fc55988a000-7fc559890000 r--s 000b2000 08:02 12596877                   /opt/microchip/mplabx/v3.55/mplab_ide/platform/lib/org-openide-util.jar
+7fc559890000-7fc559893000 r--s 00075000 08:02 12596875                   /opt/microchip/mplabx/v3.55/mplab_ide/platform/lib/boot.jar
+7fc559893000-7fc55993c000 rw-p 00000000 00:00 0 
+7fc55993c000-7fc55993d000 ---p 00000000 00:00 0 
+7fc55993d000-7fc559a41000 rw-p 00000000 00:00 0 
+7fc559a41000-7fc559a43000 r--s 00009000 08:02 12595728                   /opt/microchip/mplabx/v3.55/mplab_ide/platform/lib/org-openide-modules.jar
+7fc559a43000-7fc559a6b000 rw-p 00000000 00:00 0 
+7fc559a6b000-7fc559a73000 rw-s 00000000 08:02 16517559                   /tmp/hsperfdata_root/24815
+7fc559a73000-7fc559a74000 rw-p 00000000 00:00 0 
+7fc559a74000-7fc559a75000 r--p 00000000 00:00 0 
+7fc559a75000-7fc559a77000 rw-p 00000000 00:00 0 
+7fc559a77000-7fc559a78000 r--p 00022000 08:02 5505823                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fc559a78000-7fc559a79000 rw-p 00023000 08:02 5505823                    /lib/x86_64-linux-gnu/ld-2.19.so
+7fc559a79000-7fc559a7a000 rw-p 00000000 00:00 0 
+7fffbc61b000-7fffbc63c000 rw-p 00000000 00:00 0                          [stack]
+7fffbc68d000-7fffbc68f000 r--p 00000000 00:00 0                          [vvar]
+7fffbc68f000-7fffbc691000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Djdk.home=/opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91 -Dnetbeans.default_userdir_root=/home/chainatee/.mplab_ide -Dnetbeans.dirs=/opt/microchip/mplabx/v3.55/mplab_ide/mplab_ide:/opt/microchip/mplabx/v3.55/mplab_ide/cnd:/opt/microchip/mplabx/v3.55/mplab_ide/dlight:/opt/microchip/mplabx/v3.55/mplab_ide/harness:/opt/microchip/mplabx/v3.55/mplab_ide/ide:/opt/microchip/mplabx/v3.55/mplab_ide/mdbcore:/opt/microchip/mplabx/v3.55/mplab_ide/mplablibs:/opt/microchip/mplabx/v3.55/mplab_ide/nb: -Dnetbeans.home=/opt/microchip/mplabx/v3.55/mplab_ide/platform -Dnetbeans.importclass=org.netbeans.upgrade.AutoUpgrade -Djava.io.tmpdir=/tmp/mplab_ide -Dcrownking.stream.verbosity=very-quiet -Xss2m -Xms256m -Dapple.awt.graphics.UseQuartz=true -XX:+CMSClassUnloadingEnabled -Dapt.limit.expanded.params=1000 -Dplugin.manager.check.interval=EVERY_STARTUP -Dsun.java2d.noddraw=true -Dorg.netbeans.modules.extbrowser.UseDesktopBrowse=true -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/home/chainatee/.mplab_ide/dev/v3.55/var/log/heapdump.hprof 
+java_command: org.netbeans.Main --cachedir /home/chainatee/.cache/mplab_ide/dev/v3.55/var --userdir /home/chainatee/.mplab_ide/dev/v3.55 --branding mplab
+java_class_path (initial): /opt/microchip/mplabx/v3.55/mplab_ide/platform/lib/boot.jar:/opt/microchip/mplabx/v3.55/mplab_ide/platform/lib/org-openide-modules.jar:/opt/microchip/mplabx/v3.55/mplab_ide/platform/lib/org-openide-util.jar:/opt/microchip/mplabx/v3.55/mplab_ide/platform/lib/org-openide-util-lookup.jar:/opt/microchip/mplabx/v3.55/mplab_ide/platform/lib/locale/boot_zh_CN.jar:/opt/microchip/mplabx/v3.55/mplab_ide/platform/lib/locale/org-openide-modules_zh_CN.jar:/opt/microchip/mplabx/v3.55/mplab_ide/platform/lib/locale/org-openide-util-lookup_zh_CN.jar:/opt/microchip/mplabx/v3.55/mplab_ide/platform/lib/locale/org-openide-util_zh_CN.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/opt/microchip/mplabx/v3.55/mplab_ide/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+USERNAME=root
+LD_LIBRARY_PATH=/opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91//jre/lib/amd64:/opt/microchip/mplabx/v3.55/sys/java/jre1.8.0_91//jre/lib/i386:
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xabca10], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xabca10], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x919a20], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x919a20], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x919a20], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x919a20], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x91b050], sa_mask[0]=00000000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x91c450], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: SIG_IGN, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGTERM: [libjvm.so+0x91c450], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x91c450], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=14.04
+DISTRIB_CODENAME=trusty
+DISTRIB_DESCRIPTION="Ubuntu 14.04.5 LTS"
+
+uname:Linux 4.4.0-75-generic #96~14.04.1-Ubuntu SMP Thu Apr 20 11:06:30 UTC 2017 x86_64
+libc:glibc 2.19 NPTL 2.19 
+rlimit: STACK 8192k, CORE 0k, NPROC 63513, NOFILE 4096, AS infinity
+load average:2.14 1.41 0.92
+
+/proc/meminfo:
+MemTotal:       16349788 kB
+MemFree:        10019240 kB
+MemAvailable:   11949528 kB
+Buffers:          197676 kB
+Cached:          2722548 kB
+SwapCached:            0 kB
+Active:          4290400 kB
+Inactive:        1618124 kB
+Active(anon):    2998884 kB
+Inactive(anon):   847976 kB
+Active(file):    1291516 kB
+Inactive(file):   770148 kB
+Unevictable:          68 kB
+Mlocked:              68 kB
+SwapTotal:       4194300 kB
+SwapFree:        4194300 kB
+Dirty:              1328 kB
+Writeback:             0 kB
+AnonPages:       2988556 kB
+Mapped:           846876 kB
+Shmem:            858564 kB
+Slab:             262020 kB
+SReclaimable:     210280 kB
+SUnreclaim:        51740 kB
+KernelStack:       11584 kB
+PageTables:        60416 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    12369192 kB
+Committed_AS:   10329104 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:   1181696 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      256964 kB
+DirectMap2M:     7000064 kB
+DirectMap1G:     9437184 kB
+
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 78 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 78
+model name	: Intel(R) Core(TM) i7-6500U CPU @ 2.50GHz
+stepping	: 3
+microcode	: 0x8a
+cpu MHz		: 2789.921
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch epb intel_pt tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt xsaveopt xsavec xgetbv1 dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp
+bugs		:
+bogomips	: 5183.94
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 78
+model name	: Intel(R) Core(TM) i7-6500U CPU @ 2.50GHz
+stepping	: 3
+microcode	: 0x8a
+cpu MHz		: 2792.460
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch epb intel_pt tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt xsaveopt xsavec xgetbv1 dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp
+bugs		:
+bogomips	: 5183.94
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 78
+model name	: Intel(R) Core(TM) i7-6500U CPU @ 2.50GHz
+stepping	: 3
+microcode	: 0x8a
+cpu MHz		: 2793.781
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch epb intel_pt tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt xsaveopt xsavec xgetbv1 dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp
+bugs		:
+bogomips	: 5183.94
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 78
+model name	: Intel(R) Core(TM) i7-6500U CPU @ 2.50GHz
+stepping	: 3
+microcode	: 0x8a
+cpu MHz		: 2799.976
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch epb intel_pt tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt xsaveopt xsavec xgetbv1 dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp
+bugs		:
+bogomips	: 5183.94
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 16349788k(10019240k free), swap 4194300k(4194300k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.91-b14) for linux-amd64 JRE (1.8.0_91-b14), built on Apr  1 2016 00:57:21 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
+
+time: Fri May 12 00:20:54 2017
+elapsed time: 130 seconds (0d 0h 2m 10s)
+
