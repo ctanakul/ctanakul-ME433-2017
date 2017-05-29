@@ -481,10 +481,6 @@ void APP_Tasks(void) {
                         USB_DEVICE_CDC_TRANSFER_FLAGS_DATA_COMPLETE);
                 if (readBuffer[0] == 'r'){
                     i = 0;
-                    USB_DEVICE_CDC_Write(USB_DEVICE_CDC_INDEX_0,
-                    &appData.writeTransferHandle,
-                    "\r\n", 1,
-                    USB_DEVICE_CDC_TRANSFER_FLAGS_DATA_COMPLETE);
                 }
             } else {
                 USB_DEVICE_CDC_Write(USB_DEVICE_CDC_INDEX_0,

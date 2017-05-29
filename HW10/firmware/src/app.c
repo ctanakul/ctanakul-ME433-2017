@@ -463,7 +463,7 @@ void APP_Tasks(void) {
                 X_L_ACC = (DATA[9] << 8) | DATA[8];
                 Y_L_ACC = (DATA[11] << 8) | DATA[10];
                 Z_L_ACC = (DATA[13] << 8) | DATA[12]; 
-                
+
                 float raw_z_l_acc = Z_L_ACC*0.00061;
                 
                 
