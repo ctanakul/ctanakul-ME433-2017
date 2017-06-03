@@ -56,43 +56,43 @@
 
         <!--Val1-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nothing yet for Val1"
-            android:id="@+id/val1Status"/>
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Nothing yet for Val1"-->
+            <!--android:id="@+id/val1Status"/>-->
 
-        <SeekBar
-            android:id="@+id/seekVal1"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:progress="0"
-            android:secondaryProgress="0"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:max="255"
-            />
+        <!--<SeekBar-->
+            <!--android:id="@+id/seekVal1"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:progress="0"-->
+            <!--android:secondaryProgress="0"-->
+            <!--android:paddingTop="10dp"-->
+            <!--android:paddingBottom="10dp"-->
+            <!--android:max="255"-->
+            <!--/>-->
 
         <!--Val2-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nothing yet for Val1"
-            android:id="@+id/val2Status"/>
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Nothing yet for Val1"-->
+            <!--android:id="@+id/val2Status"/>-->
 
-        <SeekBar
-            android:id="@+id/seekVal2"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:progress="0"
-            android:secondaryProgress="0"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:max="255"
-            />
+        <!--<SeekBar-->
+            <!--android:id="@+id/seekVal2"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:progress="0"-->
+            <!--android:secondaryProgress="0"-->
+            <!--android:paddingTop="10dp"-->
+            <!--android:paddingBottom="10dp"-->
+            <!--android:max="255"-->
+            <!--/>-->
 
         <!--Val3-->
 
@@ -116,23 +116,23 @@
 
         <!--Val4-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nothing yet for Val1"
-            android:id="@+id/val4Status"/>
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Nothing yet for Val1"-->
+            <!--android:id="@+id/val4Status"/>-->
 
-        <SeekBar
-            android:id="@+id/seekVal4"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:progress="0"
-            android:secondaryProgress="0"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:max="255"
-            />
+        <!--<SeekBar-->
+            <!--android:id="@+id/seekVal4"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:progress="0"-->
+            <!--android:secondaryProgress="0"-->
+            <!--android:paddingTop="10dp"-->
+            <!--android:paddingBottom="10dp"-->
+            <!--android:max="255"-->
+            <!--/>-->
 
         <TextView
             android:layout_width="wrap_content"
@@ -145,43 +145,43 @@
 
         <!--Val1 Max-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nothing yet for Val1"
-            android:id="@+id/val1MaxStatus"/>
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Nothing yet for Val1"-->
+            <!--android:id="@+id/val1MaxStatus"/>-->
 
-        <SeekBar
-            android:id="@+id/seekVal1Max"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:progress="0"
-            android:secondaryProgress="0"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:max="255"
-            />
+        <!--<SeekBar-->
+            <!--android:id="@+id/seekVal1Max"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:progress="0"-->
+            <!--android:secondaryProgress="0"-->
+            <!--android:paddingTop="10dp"-->
+            <!--android:paddingBottom="10dp"-->
+            <!--android:max="255"-->
+            <!--/>-->
 
         <!--Val2 Max-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nothing yet for Val1"
-            android:id="@+id/val2MaxStatus"/>
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Nothing yet for Val1"-->
+            <!--android:id="@+id/val2MaxStatus"/>-->
 
-        <SeekBar
-            android:id="@+id/seekVal2Max"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:progress="0"
-            android:secondaryProgress="0"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:max="255"
-            />
+        <!--<SeekBar-->
+            <!--android:id="@+id/seekVal2Max"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:progress="0"-->
+            <!--android:secondaryProgress="0"-->
+            <!--android:paddingTop="10dp"-->
+            <!--android:paddingBottom="10dp"-->
+            <!--android:max="255"-->
+            <!--/>-->
 
         <!--Val3 Max-->
 
@@ -205,23 +205,53 @@
 
         <!--Val4 Max-->
 
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Nothing yet for Val1"-->
+            <!--android:id="@+id/val4MaxStatus"/>-->
+
+        <!--<SeekBar-->
+            <!--android:id="@+id/seekVal4Max"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:progress="0"-->
+            <!--android:secondaryProgress="0"-->
+            <!--android:paddingTop="10dp"-->
+            <!--android:paddingBottom="10dp"-->
+            <!--android:max="255"-->
+            />
+
+        <!--RangedSeekBar for Val1-->
+        <com.yahoo.mobile.client.android.util.rangeseekbar.RangeSeekBar
+            android:id="@+id/rangeSeekbarVal1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            rsb:absoluteMaxValue="255"
+            rsb:absoluteMinValue="0" />
+
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nothing yet for Val1"
-            android:id="@+id/val4MaxStatus"/>
+            android:id="@+id/val1MinMaxStatus"/>
 
-        <SeekBar
-            android:id="@+id/seekVal4Max"
+        <!--RangedSeekBar for Val2-->
+        <com.yahoo.mobile.client.android.util.rangeseekbar.RangeSeekBar
+            android:id="@+id/rangeSeekbarVal2"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:progress="0"
-            android:secondaryProgress="0"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:max="255"
-            />
+            rsb:absoluteMaxValue="255"
+            rsb:absoluteMinValue="0" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nothing yet for Val2"
+            android:id="@+id/val2MinMaxStatus"/>
 
         <!--RangedSeekBar for Val3-->
         <com.yahoo.mobile.client.android.util.rangeseekbar.RangeSeekBar
@@ -231,12 +261,27 @@
             rsb:absoluteMaxValue="255"
             rsb:absoluteMinValue="0" />
 
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nothing yet for Val1"
+            android:text="Nothing yet for Val3"
             android:id="@+id/val3MinMaxStatus"/>
 
+
+        <!--RangedSeekBar for Val4-->
+        <com.yahoo.mobile.client.android.util.rangeseekbar.RangeSeekBar
+            android:id="@+id/rangeSeekbarVal4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            rsb:absoluteMaxValue="255"
+            rsb:absoluteMinValue="0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nothing yet for Val4"
+            android:id="@+id/val4MinMaxStatus"/>
 
         <TextView
             android:layout_width="wrap_content"
