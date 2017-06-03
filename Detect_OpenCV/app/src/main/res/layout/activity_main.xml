@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context="com.example.chainatee.detect_opencv.MainActivity">
 
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        >
+
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="368dp"
         android:layout_height="495dp"
@@ -40,14 +47,22 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Thresh1"
+            android:text="Val1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!--Val1-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nothing yet for Val1"
+            android:id="@+id/val1Status"/>
+
         <SeekBar
-            android:id="@+id/seek2"
+            android:id="@+id/seekVal1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -55,7 +70,69 @@
             android:secondaryProgress="0"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
+            android:max="255"
             />
+
+        <!--Val2-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nothing yet for Val1"
+            android:id="@+id/val2Status"/>
+
+        <SeekBar
+            android:id="@+id/seekVal2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:progress="0"
+            android:secondaryProgress="0"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:max="255"
+            />
+
+        <!--Val3-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nothing yet for Val1"
+            android:id="@+id/val3Status"/>
+
+        <SeekBar
+            android:id="@+id/seekVal3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:progress="0"
+            android:secondaryProgress="0"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:max="255"
+            />
+
+        <!--Val4-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nothing yet for Val1"
+            android:id="@+id/val4Status"/>
+
+        <SeekBar
+            android:id="@+id/seekVal4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:progress="0"
+            android:secondaryProgress="0"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:max="255"
+            />
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -83,6 +160,8 @@
 
 
     </LinearLayout>
+
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
 

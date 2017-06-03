@@ -47,6 +47,10 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
     private Canvas canvas = new Canvas(bmp);
     private Paint paint1 = new Paint();
     private TextView mTextView;
+    private TextView val1TextView;
+    private TextView val2TextView;
+    private TextView val3TextView;
+    private TextView val4TextView;
     private static final String TAG = "MainActivity";
 
     private Mat tmp = new Mat (bmp.getWidth(), bmp.getHeight(), CvType.CV_8UC3);
@@ -62,9 +66,15 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
     static long prevtime = 0; // for FPS calculation
 
     SeekBar sensitivityControl;
-    SeekBar sensitivityControl2;
+    SeekBar sensitivityControlVal1;
+    SeekBar sensitivityControlVal2;
+    SeekBar sensitivityControlVal3;
+    SeekBar sensitivityControlVal4;
     int threshgb = 40;
     int val1 = 0;
+    int val2 = 0;
+    int val3 = 0;
+    int val4 = 0;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +82,10 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON); // keeps the screen from turning off
 
         mTextView = (TextView) findViewById(R.id.cameraStatus);
+        val1TextView = (TextView) findViewById(R.id.val1Status);
+        val2TextView = (TextView) findViewById(R.id.val2Status);
+        val3TextView = (TextView) findViewById(R.id.val3Status);
+        val4TextView = (TextView) findViewById(R.id.val4Status);
 
         // see if the app has permission to use the camera
         ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CAMERA}, 1);
@@ -86,10 +100,21 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
             paint1.setColor(0xffff0000); // red
             paint1.setTextSize(24);
             sensitivityControl = (SeekBar) findViewById(R.id.seek1);
-            sensitivityControl2 = (SeekBar) findViewById(R.id.seek2);
+            sensitivityControlVal1 = (SeekBar) findViewById(R.id.seekVal1);
+            sensitivityControlVal2 = (SeekBar) findViewById(R.id.seekVal2);
+            sensitivityControlVal3 = (SeekBar) findViewById(R.id.seekVal3);
+            sensitivityControlVal4 = (SeekBar) findViewById(R.id.seekVal4);
             mTextView.setText("started camera");
+            val1TextView.setText("started camera");
+            val2TextView.setText("started camera");
+            val3TextView.setText("started camera");
+            val4TextView.setText("started camera");
         } else {
             mTextView.setText("no camera permissions");
+            val1TextView.setText("no camera permissions");
+            val2TextView.setText("no camera permissions");
+            val3TextView.setText("no camera permissions");
+            val4TextView.setText("no camera permissions");
         }
         setMyControlListener();
     }
@@ -153,7 +178,7 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
 //            Mat tmp = new Mat (bmp.getWidth(), bmp.getHeight(), CvType.CV_8UC3);
             Utils.bitmapToMat(bmp, tmp);
 //            Core.inRange(tmp, new Scalar(0, 20, 100, 0), new Scalar(255, 255, 255, 255), tmp);
-            Core.inRange(tmp, new Scalar(val1, 20, 100, 0), new Scalar(255, 255, 255, 255), tmp);
+            Core.inRange(tmp, new Scalar(val1, val2, val3, val4), new Scalar(255, 255, 255, 255), tmp);
             Utils.matToBitmap(tmp, bmp);
 //            Core.inRange(src, new Scalar(20, 100, 100), new Scalar(30, 255, 255), dst);
         }
@@ -172,6 +197,10 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
         long nowtime = System.currentTimeMillis();
         long diff = nowtime - prevtime;
         mTextView.setText("FPS " + 1000 / diff);
+        val1TextView.setText("" + val1);
+        val2TextView.setText("" + val2);
+        val3TextView.setText("" + val3);
+        val4TextView.setText("" + val4);
         prevtime = nowtime;
     }
 
@@ -196,7 +225,7 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
         });
 
 
-        sensitivityControl2.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        sensitivityControlVal1.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 //            int progressChanged = 0;
 
             @Override
@@ -204,6 +233,63 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
 //                progressChanged = threshgb;
 //                myTextView.setText("The value is: "+progress);
                 val1 = progress;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
+        sensitivityControlVal2.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+//            int progressChanged = 0;
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+//                progressChanged = threshgb;
+//                myTextView.setText("The value is: "+progress);
+                val2 = progress;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
+        sensitivityControlVal3.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+//            int progressChanged = 0;
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+//                progressChanged = threshgb;
+//                myTextView.setText("The value is: "+progress);
+                val3 = progress;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
+        sensitivityControlVal4.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+//            int progressChanged = 0;
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+//                progressChanged = threshgb;
+//                myTextView.setText("The value is: "+progress);
+                val4 = progress;
             }
 
             @Override
