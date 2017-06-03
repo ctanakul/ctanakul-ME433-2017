@@ -51,6 +51,10 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
     private TextView val2TextView;
     private TextView val3TextView;
     private TextView val4TextView;
+    private TextView val1MaxTextView;
+    private TextView val2MaxTextView;
+    private TextView val3MaxTextView;
+    private TextView val4MaxTextView;
     private static final String TAG = "MainActivity";
 
     private Mat tmp = new Mat (bmp.getWidth(), bmp.getHeight(), CvType.CV_8UC3);
@@ -70,11 +74,19 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
     SeekBar sensitivityControlVal2;
     SeekBar sensitivityControlVal3;
     SeekBar sensitivityControlVal4;
+    SeekBar sensitivityControlVal1Max;
+    SeekBar sensitivityControlVal2Max;
+    SeekBar sensitivityControlVal3Max;
+    SeekBar sensitivityControlVal4Max;
     int threshgb = 40;
     int val1 = 0;
     int val2 = 0;
     int val3 = 0;
     int val4 = 0;
+    int val1Max = 0;
+    int val2Max = 0;
+    int val3Max = 0;
+    int val4Max = 0;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,6 +98,10 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
         val2TextView = (TextView) findViewById(R.id.val2Status);
         val3TextView = (TextView) findViewById(R.id.val3Status);
         val4TextView = (TextView) findViewById(R.id.val4Status);
+        val1MaxTextView = (TextView) findViewById(R.id.val1MaxStatus);
+        val2MaxTextView = (TextView) findViewById(R.id.val2MaxStatus);
+        val3MaxTextView = (TextView) findViewById(R.id.val3MaxStatus);
+        val4MaxTextView = (TextView) findViewById(R.id.val4MaxStatus);
 
         // see if the app has permission to use the camera
         ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CAMERA}, 1);
@@ -104,17 +120,29 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
             sensitivityControlVal2 = (SeekBar) findViewById(R.id.seekVal2);
             sensitivityControlVal3 = (SeekBar) findViewById(R.id.seekVal3);
             sensitivityControlVal4 = (SeekBar) findViewById(R.id.seekVal4);
+            sensitivityControlVal1Max = (SeekBar) findViewById(R.id.seekVal1Max);
+            sensitivityControlVal2Max = (SeekBar) findViewById(R.id.seekVal2Max);
+            sensitivityControlVal3Max = (SeekBar) findViewById(R.id.seekVal3Max);
+            sensitivityControlVal4Max = (SeekBar) findViewById(R.id.seekVal4Max);
             mTextView.setText("started camera");
             val1TextView.setText("started camera");
             val2TextView.setText("started camera");
             val3TextView.setText("started camera");
             val4TextView.setText("started camera");
+            val1MaxTextView.setText("started camera");
+            val2MaxTextView.setText("started camera");
+            val3MaxTextView.setText("started camera");
+            val4MaxTextView.setText("started camera");
         } else {
             mTextView.setText("no camera permissions");
             val1TextView.setText("no camera permissions");
             val2TextView.setText("no camera permissions");
             val3TextView.setText("no camera permissions");
             val4TextView.setText("no camera permissions");
+            val1MaxTextView.setText("no camera permissions");
+            val2MaxTextView.setText("no camera permissions");
+            val3MaxTextView.setText("no camera permissions");
+            val4MaxTextView.setText("no camera permissions");
         }
         setMyControlListener();
     }
@@ -178,7 +206,7 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
 //            Mat tmp = new Mat (bmp.getWidth(), bmp.getHeight(), CvType.CV_8UC3);
             Utils.bitmapToMat(bmp, tmp);
 //            Core.inRange(tmp, new Scalar(0, 20, 100, 0), new Scalar(255, 255, 255, 255), tmp);
-            Core.inRange(tmp, new Scalar(val1, val2, val3, val4), new Scalar(255, 255, 255, 255), tmp);
+            Core.inRange(tmp, new Scalar(val1, val2, val3, val4), new Scalar(val1Max, val2Max, val3Max, val4Max), tmp);
             Utils.matToBitmap(tmp, bmp);
 //            Core.inRange(src, new Scalar(20, 100, 100), new Scalar(30, 255, 255), dst);
         }
@@ -201,6 +229,10 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
         val2TextView.setText("" + val2);
         val3TextView.setText("" + val3);
         val4TextView.setText("" + val4);
+        val1MaxTextView.setText("" + val1Max);
+        val2MaxTextView.setText("" + val2Max);
+        val3MaxTextView.setText("" + val3Max);
+        val4MaxTextView.setText("" + val4Max);
         prevtime = nowtime;
     }
 
@@ -300,6 +332,83 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
             public void onStopTrackingTouch(SeekBar seekBar) {
             }
         });
+
+        sensitivityControlVal1Max.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+//            int progressChanged = 0;
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+//                progressChanged = threshgb;
+//                myTextView.setText("The value is: "+progress);
+                val1Max = progress;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
+        sensitivityControlVal2Max.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+//            int progressChanged = 0;
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+//                progressChanged = threshgb;
+//                myTextView.setText("The value is: "+progress);
+                val2Max = progress;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
+        sensitivityControlVal3Max.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+//            int progressChanged = 0;
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+//                progressChanged = threshgb;
+//                myTextView.setText("The value is: "+progress);
+                val3Max = progress;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
+        sensitivityControlVal4Max.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+//            int progressChanged = 0;
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+//                progressChanged = threshgb;
+//                myTextView.setText("The value is: "+progress);
+                val4Max = progress;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
 
     }
 

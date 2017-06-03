@@ -47,7 +47,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Val1"
+            android:text="ValMin"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -123,6 +123,95 @@
 
         <SeekBar
             android:id="@+id/seekVal4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:progress="0"
+            android:secondaryProgress="0"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:max="255"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ValMax"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--Val1 Max-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nothing yet for Val1"
+            android:id="@+id/val1MaxStatus"/>
+
+        <SeekBar
+            android:id="@+id/seekVal1Max"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:progress="0"
+            android:secondaryProgress="0"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:max="255"
+            />
+
+        <!--Val2 Max-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nothing yet for Val1"
+            android:id="@+id/val2MaxStatus"/>
+
+        <SeekBar
+            android:id="@+id/seekVal2Max"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:progress="0"
+            android:secondaryProgress="0"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:max="255"
+            />
+
+        <!--Val3 Max-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nothing yet for Val1"
+            android:id="@+id/val3MaxStatus"/>
+
+        <SeekBar
+            android:id="@+id/seekVal3Max"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:progress="0"
+            android:secondaryProgress="0"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:max="255"
+            />
+
+        <!--Val4 Max-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nothing yet for Val1"
+            android:id="@+id/val4MaxStatus"/>
+
+        <SeekBar
+            android:id="@+id/seekVal4Max"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
