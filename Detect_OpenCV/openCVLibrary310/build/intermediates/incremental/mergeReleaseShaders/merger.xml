@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/home/chainatee/Spring/433_Adv_Mechatronics/git_folder/Detect_OpenCV/openCVLibrary310/src/main/shaders"/></dataSet><dataSet config="release"><source path="/home/chainatee/Spring/433_Adv_Mechatronics/git_folder/Detect_OpenCV/openCVLibrary310/src/release/shaders"/></dataSet></merger>
