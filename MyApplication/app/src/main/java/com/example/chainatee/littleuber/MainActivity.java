@@ -52,9 +52,12 @@ import static android.graphics.Color.blue;
 import static android.graphics.Color.green;
 import static android.graphics.Color.red;
 import static android.graphics.Color.rgb;
+
+import org.opencv.android.Utils;
 import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
+import org.opencv.core.Scalar;
 
 public class MainActivity extends AppCompatActivity implements TextureView.SurfaceTextureListener{
 //    public class MainActivity extends AppCompatActivity implements TextureView.SurfaceTextureListener{
@@ -77,7 +80,8 @@ public class MainActivity extends AppCompatActivity implements TextureView.Surfa
     private TextureView mTextureView;
     private SurfaceView mSurfaceView;
     private SurfaceHolder mSurfaceHolder;
-    private Bitmap bmp = Bitmap.createBitmap(640, 480, Bitmap.Config.ARGB_8888);
+//    private Bitmap bmp = Bitmap.createBitmap(640, 480, Bitmap.Config.ARGB_8888);
+    private Bitmap bmp = Bitmap.createBitmap(320, 240, Bitmap.Config.ARGB_8888);
     private Canvas canvas = new Canvas(bmp);
     private Paint paint1 = new Paint();
     private TextView mTextView;
@@ -153,12 +157,12 @@ public class MainActivity extends AppCompatActivity implements TextureView.Surfa
 
     }
 
-
     ///////////////////////HW13
     public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
         mCamera = Camera.open();
         Camera.Parameters parameters = mCamera.getParameters();
-        parameters.setPreviewSize(640, 480);
+//        parameters.setPreviewSize(640, 480);
+        parameters.setPreviewSize(320, 240);
         parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_INFINITY); // no autofocusing
         parameters.setAutoExposureLock(true); // keep the white balance constant
         mCamera.setParameters(parameters);
@@ -223,6 +227,12 @@ public class MainActivity extends AppCompatActivity implements TextureView.Surfa
 //                bmp.setPixels(pixels, 0, bmp.getWidth(), 0, j, bmp.getWidth(), 1);
                 bmp.setPixels(pixels, 0, bmp.getWidth(), 0, trackedY, bmp.getWidth(), 1);
 //            }
+
+            //OpenCV
+//            Utils.bitmapToMat(bmp, tmp);
+//            Core.inRange(tmp, new Scalar(10, 10, 10, 0), new Scalar(50, 250, 245, 255), tmp_bitwise_mask);
+//            Utils.matToBitmap(tmp_bitwise_mask, bmp);
+
         }
 
         int pos = 50;
@@ -239,6 +249,16 @@ public class MainActivity extends AppCompatActivity implements TextureView.Surfa
         long diff = nowtime - prevtime;
         mTextView.setText("FPS " + 1000 / diff);
         prevtime = nowtime;
+
+        String sendString = String.valueOf(myControl.getProgress()) + ' ' +String.valueOf(myControl2.getProgress()) + '\n';
+//                String sendString = String.valueOf(myControl.getProgress()) + '\n';
+
+        // tRY SENDING STREAM OF data
+        try {
+            sPort.write(sendString.getBytes(), 10); // 10 is the timeout
+        } catch (IOException e) { }
+        // tRY SENDING STREAM OF data (END)
+
     }
 
     ///////////////////////HW13(END)

@@ -82,7 +82,9 @@
         <ScrollView
             android:id="@+id/ScrollView01"
             android:layout_width="wrap_content"
-            android:layout_height="250dip">
+            android:layout_height="100dip">
+            <!--android:layout_height="250dip">-->
+
 
             <TextView
                 android:id="@+id/textView03"
@@ -99,15 +101,26 @@
             android:text="Nothing yet"
             android:id="@+id/cameraStatus"/>
 
+        <!--<SurfaceView-->
+            <!--android:id="@+id/surfaceview"-->
+            <!--android:layout_width="640px"-->
+            <!--android:layout_height="480px" />-->
+
+        <!--<TextureView-->
+            <!--android:id="@+id/textureview"-->
+            <!--android:layout_width="640px"-->
+            <!--android:layout_height="480px" />-->
+
+
         <SurfaceView
             android:id="@+id/surfaceview"
-            android:layout_width="640px"
-            android:layout_height="480px" />
+            android:layout_width="320px"
+            android:layout_height="240px" />
 
         <TextureView
             android:id="@+id/textureview"
-            android:layout_width="640px"
-            android:layout_height="480px" />
+            android:layout_width="320px"
+            android:layout_height="240px" />
 
     </LinearLayout>
     </ScrollView>
