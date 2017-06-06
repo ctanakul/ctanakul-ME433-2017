@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements TextureView.Surfa
     private TextView mTextView;
 
     static long prevtime = 0; // for FPS calculation
+    int threshgb = 40;
     /////////////////HW13 (END)
 
     @Override
@@ -164,28 +165,47 @@ public class MainActivity extends AppCompatActivity implements TextureView.Surfa
 
         final Canvas c = mSurfaceHolder.lockCanvas();
         if (c != null) {
-            int thresh = 0; // comparison value
+//            int thresh = 0; // comparison value
+//            int[] pixels = new int[bmp.getWidth()]; // pixels[] is the RGBA data
+//            int startY = 200; // which row in the bitmap to analyze to read
+//            bmp.getPixels(pixels, 0, bmp.getWidth(), 0, startY, bmp.getWidth(), 1);
+//
+//            // in the row, see if there is more green than red
+//            for (int i = 0; i < bmp.getWidth(); i++) {
+//                if ((green(pixels[i]) - red(pixels[i])) > thresh) {
+//                    pixels[i] = rgb(0, 255, 0); // over write the pixel with pure green
+//                }
+//            }
+//
+//            // update the row
+//            bmp.setPixels(pixels, 0, bmp.getWidth(), 0, startY, bmp.getWidth(), 1);
+
+
+            // modify myself
+            int threshgr = 0; // comparison value between green and red
+//            int threshgb = 40; // comparison value between green and blue
             int[] pixels = new int[bmp.getWidth()]; // pixels[] is the RGBA data
-            int startY = 200; // which row in the bitmap to analyze to read
-            bmp.getPixels(pixels, 0, bmp.getWidth(), 0, startY, bmp.getWidth(), 1);
-
-            // in the row, see if there is more green than red
-            for (int i = 0; i < bmp.getWidth(); i++) {
-                if ((green(pixels[i]) - red(pixels[i])) > thresh) {
-                    pixels[i] = rgb(0, 255, 0); // over write the pixel with pure green
+            int trackedY = 0;
+            for (int j = 0; j < bmp.getHeight(); j++) {
+                trackedY = j;
+                bmp.getPixels(pixels, 0, bmp.getWidth(), 0, trackedY, bmp.getWidth(), 1);
+                // in the row, see if there is more green than red
+                for (int i = 0; i < bmp.getWidth(); i++) {
+                    if (((green(pixels[i]) - red(pixels[i])) > threshgr) && ((green(pixels[i]) - blue(pixels[i])) > threshgb)) {
+                        pixels[i] = rgb(0, 255, 0); // over write the pixel with pure green
+                    }
                 }
+                // update the row
+                bmp.setPixels(pixels, 0, bmp.getWidth(), 0, j, bmp.getWidth(), 1);
             }
-
-            // update the row
-            bmp.setPixels(pixels, 0, bmp.getWidth(), 0, startY, bmp.getWidth(), 1);
         }
 
-        // draw a circle at some position
         int pos = 50;
         canvas.drawCircle(pos, 240, 5, paint1); // x position, y position, diameter, color
 
         // write the pos as text
-        canvas.drawText("pos = " + pos, 10, 200, paint1);
+//        canvas.drawText("pos = " + pos, 10, 200, paint1);
+        canvas.drawText("threshGB = " + threshgb, 10, 200, paint1);
         c.drawBitmap(bmp, 0, 0, null);
         mSurfaceHolder.unlockCanvasAndPost(c);
 
