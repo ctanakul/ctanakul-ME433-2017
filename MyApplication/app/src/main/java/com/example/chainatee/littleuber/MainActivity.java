@@ -8,6 +8,7 @@ import android.hardware.usb.UsbDeviceConnection;
 import android.hardware.usb.UsbManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
@@ -45,15 +46,22 @@ import android.view.SurfaceView;
 import android.view.TextureView;
 import android.view.WindowManager;
 
+import org.opencv.android.OpenCVLoader;
+
 import static android.graphics.Color.blue;
 import static android.graphics.Color.green;
 import static android.graphics.Color.red;
 import static android.graphics.Color.rgb;
+import org.opencv.core.Core;
+import org.opencv.core.CvType;
+import org.opencv.core.Mat;
 
 public class MainActivity extends AppCompatActivity implements TextureView.SurfaceTextureListener{
 //    public class MainActivity extends AppCompatActivity implements TextureView.SurfaceTextureListener{
     SeekBar myControl;
+    SeekBar myControl2;
     TextView myTextView;
+    TextView myTextView4;
     Button button;
     TextView myTextView2;
     ScrollView myScrollView;
@@ -78,12 +86,27 @@ public class MainActivity extends AppCompatActivity implements TextureView.Surfa
     int threshgb = 40;
     /////////////////HW13 (END)
 
+    ////////////////////////////OpenCV
+    private static final String TAG = "MainActivity";
+    static {
+        if(!OpenCVLoader.initDebug()){
+            Log.d(TAG, "OpenCV not loaded");
+        } else {
+            Log.d(TAG, "OpenCV loaded");
+        };
+    }
+    private Mat tmp = new Mat (bmp.getWidth(), bmp.getHeight(), CvType.CV_8UC4);
+    private Mat tmp_bitwise_mask = new Mat (bmp.getWidth(), bmp.getHeight(), CvType.CV_8UC1);
+    ////////////////////////////OpenCV (END)
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         myControl = (SeekBar) findViewById(R.id.seek1);
+        myControl2 = (SeekBar) findViewById(R.id.seek2);
         myTextView = (TextView) findViewById(R.id.textView01);
+        myTextView4 = (TextView) findViewById(R.id.textView04);
         myTextView.setText("Enter whatever you Like!");
         setMyControlListener();
 
@@ -117,8 +140,9 @@ public class MainActivity extends AppCompatActivity implements TextureView.Surfa
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myTextView2.setText("value on click is "+myControl.getProgress());
-                String sendString = String.valueOf(myControl.getProgress()) + '\n';
+                myTextView2.setText("value on click is "+myControl.getProgress() + " &" +myControl2.getProgress());
+                String sendString = String.valueOf(myControl.getProgress()) + ' ' +String.valueOf(myControl2.getProgress()) + '\n';
+//                String sendString = String.valueOf(myControl.getProgress()) + '\n';
                 try {
                     sPort.write(sendString.getBytes(), 10); // 10 is the timeout
                 } catch (IOException e) { }
@@ -186,8 +210,8 @@ public class MainActivity extends AppCompatActivity implements TextureView.Surfa
 //            int threshgb = 40; // comparison value between green and blue
             int[] pixels = new int[bmp.getWidth()]; // pixels[] is the RGBA data
             int trackedY = 0;
-            for (int j = 0; j < bmp.getHeight(); j++) {
-                trackedY = j;
+//            for (int j = 0; j < bmp.getHeight(); j++) {
+                trackedY = 50;
                 bmp.getPixels(pixels, 0, bmp.getWidth(), 0, trackedY, bmp.getWidth(), 1);
                 // in the row, see if there is more green than red
                 for (int i = 0; i < bmp.getWidth(); i++) {
@@ -196,8 +220,9 @@ public class MainActivity extends AppCompatActivity implements TextureView.Surfa
                     }
                 }
                 // update the row
-                bmp.setPixels(pixels, 0, bmp.getWidth(), 0, j, bmp.getWidth(), 1);
-            }
+//                bmp.setPixels(pixels, 0, bmp.getWidth(), 0, j, bmp.getWidth(), 1);
+                bmp.setPixels(pixels, 0, bmp.getWidth(), 0, trackedY, bmp.getWidth(), 1);
+//            }
         }
 
         int pos = 50;
@@ -228,6 +253,25 @@ public class MainActivity extends AppCompatActivity implements TextureView.Surfa
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 progressChanged = progress;
                 myTextView.setText("The value is: "+progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
+        myControl2.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+
+            int progressChanged = 0;
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                progressChanged = progress;
+                myTextView4.setText("The value is: "+progress);
             }
 
             @Override
