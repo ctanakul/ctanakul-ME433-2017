@@ -13,6 +13,7 @@
         >
 
     <LinearLayout
+        xmlns:rsb="http://schemas.android.com/apk/res-auto"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -21,22 +22,22 @@
         tools:layout_editor_absoluteY="2dp"
         tools:layout_editor_absoluteX="68dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Hello World!"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--app:layout_constraintRight_toRightOf="parent"-->
+            <!--app:layout_constraintTop_toTopOf="parent" />-->
 
         <SeekBar
-            android:id="@+id/seek1"
+            android:id="@+id/seekvelMaxf"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:progress="20"
-            android:secondaryProgress="20"
+            android:progress="43"
+            android:secondaryProgress="43"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             />
@@ -46,11 +47,135 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:progress="20"
-            android:secondaryProgress="20"
+            android:progress="100"
+            android:secondaryProgress="100"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             />
+
+
+        <!--SlowVelTurnf-->
+        <SeekBar
+            android:id="@+id/seek3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:progress="100"
+            android:secondaryProgress="100"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            />
+
+        <SeekBar
+            android:id="@+id/seek4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:progress="87"
+            android:secondaryProgress="87"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            />
+
+        <!--slowWheelVelTurnQuadf-->
+        <SeekBar
+            android:id="@+id/seek5"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:progress="89"
+            android:secondaryProgress="89"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            />
+
+
+        <SeekBar
+            android:id="@+id/seekNickR"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:progress="15"
+            android:secondaryProgress="15"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            />
+
+
+        <SeekBar
+            android:id="@+id/seekNickT"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:progress="10"
+            android:secondaryProgress="10"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            />
+
+        <TextView
+            android:id="@+id/textViewNick"
+            android:text="Nick's value "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <!--Midpoint-->
+        <SeekBar
+            android:id="@+id/seekMidpoint"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:progress="90"
+            android:secondaryProgress="90"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            />
+
+        <SeekBar
+            android:id="@+id/seekEmergencyVelTurnRight"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:progress="60"
+            android:secondaryProgress="60"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            />
+
+        <SeekBar
+            android:id="@+id/seekEmergencyVelTurnLeft"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:progress="52"
+            android:secondaryProgress="52"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            />
+
+        <SeekBar
+            android:id="@+id/seekEmergencyThresholdRight"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:progress="48"
+            android:secondaryProgress="48"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            />
+
+        <SeekBar
+            android:id="@+id/seekEmergencyThresholdLeft"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:progress="93"
+            android:secondaryProgress="93"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            />
+
 
         <TextView
             android:id="@+id/textView01"
@@ -59,6 +184,37 @@
             android:layout_height="wrap_content"
             />
 
+        <!--RangedSeekBar for R-->
+        <com.yahoo.mobile.client.android.util.rangeseekbar.RangeSeekBar
+            android:id="@+id/rangeSeekbarValR"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            rsb:absoluteMaxValue="255"
+            rsb:absoluteMinValue="0" />
+
+        <!--RangedSeekBar for G-->
+        <com.yahoo.mobile.client.android.util.rangeseekbar.RangeSeekBar
+            android:id="@+id/rangeSeekbarValG"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            rsb:absoluteMaxValue="255"
+            rsb:absoluteMinValue="0" />
+
+        <!--RangedSeekBar for B-->
+        <com.yahoo.mobile.client.android.util.rangeseekbar.RangeSeekBar
+            android:id="@+id/rangeSeekbarValB"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            rsb:absoluteMaxValue="255"
+            rsb:absoluteMinValue="0" />
+
+        <!--TextView for RGB-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nothing yet for ValColor"
+            android:id="@+id/valRGBMinMaxStatus"/>
+
         <TextView
             android:id="@+id/textView04"
             android:text="Trackbar value "
@@ -66,24 +222,24 @@
             android:layout_height="wrap_content"
             />
 
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Send slider value" />
+        <!--<Button-->
+            <!--android:id="@+id/button1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Send slider value" />-->
 
-        <TextView
-            android:id="@+id/textView02"
-            android:text="nothing from button yet"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
+        <!--<TextView-->
+            <!--android:id="@+id/textView02"-->
+            <!--android:text="nothing from button yet"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--/>-->
 
-        <ScrollView
-            android:id="@+id/ScrollView01"
-            android:layout_width="wrap_content"
-            android:layout_height="100dip">
-            <!--android:layout_height="250dip">-->
+        <!--<ScrollView-->
+            <!--android:id="@+id/ScrollView01"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="100dip">-->
+            <!--&lt;!&ndash;android:layout_height="250dip">&ndash;&gt;-->
 
 
             <TextView
@@ -93,7 +249,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/holo_green_light"
                 />
-        </ScrollView>
+        <!--</ScrollView>-->
 
         <TextView
             android:layout_width="wrap_content"

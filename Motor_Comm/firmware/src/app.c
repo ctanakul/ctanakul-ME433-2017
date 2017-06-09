@@ -71,6 +71,10 @@ char rx[64]; // the raw data
 int rxPos = 0; // how much data has been stored
 int gotRx = 0; // the flag
 int rxVal = 0; // a place to store the int that was received
+int rVel = 0;
+int lVel = 0;
+int servo = 0;
+int SERVO = 0;
 // *****************************************************************************
 /* Application Data
 
@@ -366,7 +370,18 @@ void APP_Initialize(void) {
     OC1CONbits.ON = 1;
     OC4CONbits.ON = 1;
     
-    
+    // put these initializations in APP_Initialize()
+//    RPB14Rbits.RPB14R = 0b0101; // B14 is OC3
+//    T3CONbits.TCKPS = 4; // prescaler N=16
+//    PR3 = 60000 - 1; // 50Hz
+//    TMR3 = 0;
+//    OC3CONbits.OCM = 0b110; // PWM mode without fault pin; other OC1CON bits are defaults
+//    OC3CONbits.OCTSEL = 1; // use timer3
+//    OC3RS = 0; // should set the motor to 90 degrees (0.5ms to 2.5ms is 1500 to 7500 for 0 to 180 degrees)
+//    OC3R = 0; // read-only
+//    T3CONbits.ON = 1;
+//    OC3CONbits.ON = 1;
+
 
 }
 
@@ -427,7 +442,10 @@ void APP_Tasks(void) {
                     // if you got a newline
                     if (appData.readBuffer[ii] == '\n' || appData.readBuffer[ii] == '\r') {
                         rx[rxPos] = 0; // end the array
-                        sscanf(rx, "%d", &rxVal); // get the int out of the array
+//                        sscanf(rx, "%d", &rxVal); // get the int out of the array
+//                        sscanf(rx, "%d", &rVel); // get the int out of the array
+                        sscanf(rx, "%d %d", &rVel, &lVel); // get the int out of the array
+//                        sscanf(rx, "%d %d %d", &rVel, &lVel, &SERVO); // get the int out of the array
                         gotRx = 1; // set the flag
                         break; // get out of the while loop
                     } else if (appData.readBuffer[ii] == 0) {
@@ -438,8 +456,10 @@ void APP_Tasks(void) {
                         rxPos++;
                         ii++;
                     }
-                }                
-                
+                }
+
+
+                              
                 appData.isReadComplete = false;
                 appData.readTransferHandle = USB_DEVICE_CDC_TRANSFER_HANDLE_INVALID;
 
@@ -455,10 +475,27 @@ void APP_Tasks(void) {
 
             LATAbits.LATA1 = 1; // direction
 //            OC1RS = 600; // velocity, 50%
-            OC1RS = (int) rxVal*1200/100; 
+//            OC1RS = (int) rxVal*1200/100; 
+            OC1RS = (int) rVel*1200/100;
             LATBbits.LATB3 = 0; // direction
-            OC4RS = 600; // velocity, 50%
+//            OC4RS = 600; // velocity, 50%
+            OC4RS = (int) lVel*1200/100; // velocity, 50%
             
+            //Servo
+//                        OC3RS = 2000;
+//                             Servo
+//              should set the motor to 60 degrees (0.5ms to 2.5ms is 1500 to 7500 for 0 to 180 degrees)
+            
+
+//            
+//            if (servo == 6000) {
+//                OC3RS = 2500;
+//                servo = 2500;
+//            } else {
+//                OC3RS = 6000;
+//                servo = 6000;
+//            }
+//            
             break;
 
         case APP_STATE_WAIT_FOR_READ_COMPLETE:
@@ -493,7 +530,9 @@ void APP_Tasks(void) {
             appData.state = APP_STATE_WAIT_FOR_WRITE_COMPLETE;
 
             if (gotRx) {
-                len = sprintf(dataOut, "got: %d\r\n", rxVal);
+//                len = sprintf(dataOut, "got: %d\r\n", rxVal);
+//                len = sprintf(dataOut, "got: %d\r\n", rVel);      
+                len = sprintf(dataOut, "got: %d %d\r\n", rVel, lVel);  
                 i++;
                 USB_DEVICE_CDC_Write(USB_DEVICE_CDC_INDEX_0,
                         &appData.writeTransferHandle,
@@ -501,14 +540,24 @@ void APP_Tasks(void) {
                         USB_DEVICE_CDC_TRANSFER_FLAGS_DATA_COMPLETE);
                 rxPos = 0;
                 gotRx = 0;
+                           
+//                OC3RS = SERVO;
+//                  if (servo < 6000) {
+//                       OC3RS = servo;
+//                        servo += 100;
+//                   } else {
+//                        servo = 2000;
+//                    }
             } else {
-                len = sprintf(dataOut, "%d\r\n", i);
+                len = sprintf(dataOut, "%d\r\n", 0);
                 i++;
                 USB_DEVICE_CDC_Write(USB_DEVICE_CDC_INDEX_0,
                         &appData.writeTransferHandle, dataOut, len,
                         USB_DEVICE_CDC_TRANSFER_FLAGS_DATA_COMPLETE);
                 startTime = _CP0_GET_COUNT();
             }
+
+            
             break;
 
         case APP_STATE_WAIT_FOR_WRITE_COMPLETE:
